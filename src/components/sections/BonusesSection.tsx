@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Gift, Users, MessageCircle, Zap, ShieldCheck, Gem, Wand2, Image, Layers } from 'lucide-react';
+import { Gift, Users, MessageCircle, Zap, ShieldCheck, Gem, Wand2, Image, Layers, Bot } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface Bonus {
@@ -13,7 +13,7 @@ interface Bonus {
 const bonuses: Bonus[] = [
   { icon: Gem, title: 'Acesso Vitalício', value: 'R$230,00', description: 'Aprenda no seu ritmo, para sempre.' },
   { icon: Wand2, title: 'Studio Viral', description: 'O gerador de prompts mais poderoso do mercado.' },
-  { icon: MessageCircle, title: 'ChatGPT com Veo3', description: 'Masterclass para integrar as IAs mais poderosas.' },
+  { icon: Bot, title: 'BOT PROMPT VIRAL', description: 'A IA mais poderosa do mercado especializada em criar vídeos personalizados.' },
   { icon: Zap, title: 'Domine Outras IAs', description: 'Expanda seu arsenal de ferramentas de IA em alta.' },
   { icon: ShieldCheck, title: 'Guia de Monetização Avançado', description: 'Estratégias comprovadas para lucrar alto.' },
   {
@@ -35,7 +35,7 @@ export default function BonusesSection() {
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">
-            Ganhe <span className="text-primary">R$ 3.115,00</span> em Bônus Insanos
+            Ganhe <span className="text-primary">R$ 630,00</span> em Bônus Insanos
             </h2>
             <p className="text-muted-foreground mt-2 md:text-lg font-rubik">Ao se inscrever hoje, você leva tudo isso DE GRAÇA!</p>
         </div>
@@ -64,3 +64,4 @@ export default function BonusesSection() {
     </section>
   );
 }
+
