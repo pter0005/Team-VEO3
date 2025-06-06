@@ -52,6 +52,10 @@ export default function HeroSection() {
                 <CheckCircle className="h-4 w-4 mr-2 text-accent" />
                 Potencial de viralização massivo.
               </li>
+              <li className="flex items-center">
+                <CheckCircle className="h-4 w-4 mr-2 text-accent" />
+                Faça pelo celular e computador.
+              </li>
             </ul>
           </div>
 
