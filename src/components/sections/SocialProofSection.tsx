@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     id: 3,
-    image: "https://placehold.co/400x300.png",
+    image: "https://i.imgur.com/blFl5G9.png",
     alt: "Gráfico mostrando aumento de seguidores após usar o Team VEO3",
     caption: "Meus seguidores não param de crescer!",
     icon: Users,
@@ -67,4 +67,3 @@ export default function SocialProofSection() {
     </section>
   );
 }
-
