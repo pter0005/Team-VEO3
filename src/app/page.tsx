@@ -3,8 +3,9 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import BenefitsSection from '@/components/sections/BenefitsSection';
 import PromiseSection from '@/components/sections/PromiseSection';
+import ResultsSection from '@/components/sections/ResultsSection'; // Nova importação
 import CurriculumSection from '@/components/sections/CurriculumSection';
-import AccessSection from '@/components/sections/AccessSection'; // Nova importação
+import AccessSection from '@/components/sections/AccessSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
 import BonusesSection from '@/components/sections/BonusesSection';
 import PricingSection from '@/components/sections/PricingSection';
@@ -18,8 +19,9 @@ export default function HomePage() {
         <HeroSection />
         <BenefitsSection />
         <PromiseSection />
+        <ResultsSection /> {/* Nova seção adicionada */}
         <CurriculumSection />
-        <AccessSection /> {/* Nova seção adicionada */}
+        <AccessSection />
         <SocialProofSection />
         <BonusesSection />
         <PricingSection />
