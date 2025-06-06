@@ -1,13 +1,38 @@
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 
 const videoExamples = [
-  { id: 1, title: "POV: Vc é uma gótica em aracajú", thumb: "https://img.youtube.com/vi/kLJm-nZGFsc/sddefault.jpg", hint:"gothic style" },
-  { id: 2, title: "POV: Vc é uma gótica em aracajú 2", thumb: "https://placehold.co/600x400.png", hint:"movie scene" },
-  { id: 3, title: "POV: O que deveria ter acontecido em 1500n mudou nada nao cara n mudou nada nao cara", thumb: "https://placehold.co/600x400.png", hint:"finance chart" },
-  { id: 4, title: "POV: Seu time perdeu", thumb: "https://img.youtube.com/vi/VTxWgMCixCs/sddefault.jpg", hint:"soccer loss" },
+  { 
+    id: 1, 
+    title: "POV: Vc é uma gótica em aracajú", 
+    thumb: "https://img.youtube.com/vi/kLJm-nZGFsc/sddefault.jpg", 
+    videoUrl: "https://www.youtube.com/watch?v=kLJm-nZGFsc",
+    hint:"gothic style" 
+  },
+  { 
+    id: 2, 
+    title: "POV: Vc é uma gótica em aracajú 2", 
+    thumb: "https://placehold.co/600x400.png", 
+    videoUrl: "https://www.youtube.com", // Atualize com o URL do vídeo desejado
+    hint:"movie scene" 
+  },
+  { 
+    id: 3, 
+    title: "POV: O que deveria ter acontecido em 1500n mudou nada nao cara n mudou nada nao cara", 
+    thumb: "https://placehold.co/600x400.png", 
+    videoUrl: "https://www.youtube.com", // Atualize com o URL do vídeo desejado
+    hint:"finance chart" 
+  },
+  { 
+    id: 4, 
+    title: "POV: Seu time perdeu", 
+    thumb: "https://img.youtube.com/vi/VTxWgMCixCs/sddefault.jpg", 
+    videoUrl: "https://www.youtube.com/watch?v=VTxWgMCixCs",
+    hint:"soccer loss" 
+  },
 ];
 
 export default function PromiseSection() {
@@ -22,30 +47,33 @@ export default function PromiseSection() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoExamples.map((video) => (
-            <Card key={video.id} className="overflow-hidden group bg-card border-border hover:shadow-xl hover:border-primary/50 transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="relative aspect-video">
-                  <Image
-                    src={video.thumb}
-                    alt={video.title}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={video.hint}
-                    className="transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <PlayCircle className="h-12 w-12 text-white/80" />
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-sora font-semibold text-sm text-foreground truncate group-hover:text-primary transition-colors">{video.title}</h3>
-                </div>
-              </CardContent>
-            </Card>
+            <Link key={video.id} href={video.videoUrl} passHref legacyBehavior>
+              <a target="_blank" rel="noopener noreferrer" className="block h-full">
+                <Card className="overflow-hidden group bg-card border-border hover:shadow-xl hover:border-primary/50 transition-all duration-300 h-full flex flex-col">
+                  <CardContent className="p-0 flex-grow flex flex-col">
+                    <div className="relative aspect-video">
+                      <Image
+                        src={video.thumb}
+                        alt={video.title}
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint={video.hint}
+                        className="transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <PlayCircle className="h-12 w-12 text-white/80" />
+                      </div>
+                    </div>
+                    <div className="p-4 mt-auto bg-card">
+                      <h3 className="font-sora font-semibold text-sm text-foreground truncate group-hover:text-primary transition-colors">{video.title}</h3>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+            </Link>
           ))}
         </div>
       </div>
     </section>
   );
 }
-
