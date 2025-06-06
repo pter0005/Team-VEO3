@@ -1,20 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Sparkles, Clock } from 'lucide-react';
+import { CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-
-const features = [
-  'Curso Completo PTER-VEO3',
-  'Todos os Bônus Exclusivos',
-  'Atualizações Constantes',
-  'Acesso ao Grupo VIP',
-  'Suporte Individualizado',
-];
 
 const professionalFeatures = [
   { text: 'Curso Completo PTER-VEO3', icon: CheckCircle },
   { text: 'Todos os Bônus Exclusivos', icon: CheckCircle },
-  { text: 'Consultoria Estratégica 24h', icon: Clock, glow: true },
   { text: 'Acesso Vitalício e Atualizações Futuras', icon: Sparkles },
   { text: 'Comunidade VIP de Networking', icon: CheckCircle },
   { text: 'Suporte Prioritário Dedicado', icon: CheckCircle },
@@ -34,14 +25,14 @@ export default function PricingSection() {
           <CardHeader>
             <CardTitle className="font-headline text-2xl md:text-3xl text-foreground">Plano Profissional 1 Ano</CardTitle>
             <CardDescription className="text-muted-foreground text-base md:text-lg font-rubik">
-              Tudo que você precisa para criar vídeos virais e lucrativos com IA, mais consultoria estratégica.
+              Tudo que você precisa para criar vídeos virais e lucrativos com IA.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center my-6">
-              <p className="text-2xl text-muted-foreground line-through">De R$ 159,00</p>
+              <p className="text-2xl text-muted-foreground line-through">De R$ 129,99</p>
               <p className="font-headline text-5xl md:text-[42px] font-bold text-primary mt-1">
-                Por R$ 57,90
+                Por R$ 23,99
               </p>
               <p className="text-muted-foreground mt-2 font-rubik">(Pagamento Único - Sem Mensalidades)</p>
             </div>
