@@ -83,7 +83,7 @@ export default function PromiseSection() {
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
           Os vídeos abaixo foram criados por mim, em apenas 2 dias eu viralizei eles alcançando mais de 15 milhões de visualização no TikTok e no Instagram. E nesse curso você vai aprender como fiz isso, e como qualquer pessoa consegue lucrar com a VEO3 sem precisar ser o expert em computadores.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8"> {/* Changed to lg:grid-cols-2 for larger videos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoExamples.map((video) => (
             <Card key={video.id} className="overflow-hidden group bg-card border-border hover:shadow-primary-glow-soft hover:border-primary/50 transition-all duration-300 ease-in-out h-full flex flex-col hover:scale-105">
               <CardContent className="p-0 flex-grow flex flex-col">
