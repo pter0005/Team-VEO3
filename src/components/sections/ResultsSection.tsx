@@ -17,7 +17,7 @@ export default function ResultsSection() {
             <CardContent className="p-0">
               <div className="relative aspect-video">
                 <Image
-                  src="https://placehold.co/600x400.png"
+                  src="https://i.imgur.com/HSSwxF9.png"
                   alt="Resultado 1 do Bot Prompt Viral"
                   layout="fill"
                   objectFit="cover"
@@ -31,7 +31,7 @@ export default function ResultsSection() {
             <CardContent className="p-0">
               <div className="relative aspect-video">
                 <Image
-                  src="https://placehold.co/600x400.png"
+                  src="https://i.imgur.com/byxz3U6.png"
                   alt="Resultado 2 do Bot Prompt Viral"
                   layout="fill"
                   objectFit="cover"
