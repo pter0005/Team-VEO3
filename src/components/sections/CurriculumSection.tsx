@@ -27,7 +27,6 @@ export default function CurriculumSection() {
               <div className="md:w-1/3 md:flex-shrink-0 w-full relative aspect-video md:aspect-auto md:min-h-[450px] overflow-hidden">
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
-                    // É AQUI QUE VOCÊ DEVE COLOCAR O LINK DIRETO DA SUA IMAGEM:
                     src="https://i.imgur.com/72wiTzV.jpeg" 
                     alt="Visual representando o conteúdo e aprendizado do curso"
                     layout="fill"
@@ -36,6 +35,8 @@ export default function CurriculumSection() {
                     className="rounded-none md:rounded-l-lg md:rounded-r-none"
                   />
                 </div>
+                {/* Gradient Overlay for smoother transition to text on desktop */}
+                <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[hsl(var(--background-end))] to-transparent pointer-events-none hidden md:block"></div>
               </div>
               <div className="md:w-2/3 md:flex-shrink-0 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                 <ul className="space-y-4">
