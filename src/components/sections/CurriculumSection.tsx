@@ -28,11 +28,11 @@ export default function CurriculumSection() {
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
                     // É AQUI QUE VOCÊ DEVE COLOCAR O LINK DIRETO DA SUA IMAGEM:
-                    src="https://placehold.co/600x800.png" 
+                    src="https://i.imgur.com/72wiTzV.jpeg" 
                     alt="Visual representando o conteúdo e aprendizado do curso"
                     layout="fill"
                     objectFit="cover"
-                    data-ai-hint="learning course" // Altere este hint se a imagem mudar
+                    data-ai-hint="course interface" 
                     className="rounded-none md:rounded-l-lg md:rounded-r-none"
                   />
                 </div>
