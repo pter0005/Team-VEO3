@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Space Grotesk', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,11 +88,19 @@ export default {
             height: '0',
           },
         },
+        pulseSlight: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-slight': 'pulseSlight 1.5s ease-in-out infinite',
       },
+      backgroundImage: {
+        'gradient-orange-red': 'linear-gradient(to right, hsl(var(--primary)), #FF3C00)',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
