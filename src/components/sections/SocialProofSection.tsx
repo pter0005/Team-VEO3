@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageSquare, Users, BarChart3 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const testimonials = [
   {
@@ -48,7 +49,10 @@ export default function SocialProofSection() {
                         layout="fill"
                         objectFit="cover"
                         data-ai-hint={testimonial.hint}
-                        className="transition-transform duration-300 group-hover:scale-105"
+                        className={cn(
+                          "transition-transform duration-300 group-hover:scale-105",
+                          testimonial.id === 2 && "object-right" 
+                        )}
                     />
                  </div>
                 <div className="p-6 text-center">
@@ -64,4 +68,3 @@ export default function SocialProofSection() {
     </section>
   );
 }
-
