@@ -17,7 +17,7 @@ const testimonials = [
     id: 2,
     image: "https://i.imgur.com/wr9aTj8.png",
     alt: "Print de tela mostrando ganhos financeiros após usar o Team VEO3",
-    caption: "+300k views no primeiro vídeo seguindo o método.",
+    caption: "Comecei um perfil hoje e meu primeiro vídeo está com 100 mil visualizações",
     icon: BarChart3,
     hint: "earnings proof"
   },
