@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Gift, Users, MessageCircle, Zap, ShieldCheck, Gem } from 'lucide-react';
+import { Gift, Users, MessageCircle, Zap, ShieldCheck, Gem, Wand2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface Bonus {
@@ -11,7 +11,7 @@ interface Bonus {
 
 const bonuses: Bonus[] = [
   { icon: Gem, title: 'Acesso Vitalício', value: 'R$997,00', description: 'Aprenda no seu ritmo, para sempre.' },
-  { icon: Users, title: 'Comunidade VIP', description: 'Networking e suporte exclusivo com outros alunos.' },
+  { icon: Wand2, title: 'Studio Viral', description: 'O gerador de prompts mais poderoso do mercado.' },
   { icon: MessageCircle, title: 'ChatGPT com Veo3', description: 'Masterclass para integrar as IAs mais poderosas.' },
   { icon: Zap, title: 'Domine Outras IAs', description: 'Expanda seu arsenal de ferramentas de IA em alta.' },
   { icon: ShieldCheck, title: 'Guia de Monetização Avançado', description: 'Estratégias comprovadas para lucrar alto.' },
