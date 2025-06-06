@@ -1,10 +1,11 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const professionalFeatures = [
-  { text: 'Curso Completo Team Veo3', icon: CheckCircle },
+  { text: 'Curso Completo Team VEO3', icon: CheckCircle },
   { text: 'Todos os Bônus Exclusivos', icon: CheckCircle },
   { text: 'Acesso Vitalício e Atualizações Futuras', icon: Sparkles },
   { text: 'Comunidade VIP de Networking', icon: CheckCircle },
@@ -30,7 +31,7 @@ export default function PricingSection() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center my-6">
-              <p className="text-2xl text-muted-foreground line-through">De R$ 129,99</p>
+              <p className="text-2xl text-muted-foreground line-through">De R$ 76,99</p>
               <p className="font-headline text-5xl md:text-[42px] font-bold text-primary mt-1">
                 Por R$ 23,99
               </p>
