@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
-import { Instagram, Youtube, Twitter } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 // Simple TikTok icon SVG
 const TikTokIcon = () => (
