@@ -24,6 +24,8 @@ function getYouTubeEmbedUrl(watchUrl: string): string {
         videoId = url.searchParams.get('v') || '';
       } else if (url.pathname.startsWith('/embed/')) {
         videoId = url.pathname.substring('/embed/'.length);
+      } else if (url.pathname.startsWith('/shorts/')) {
+        videoId = url.pathname.substring('/shorts/'.length);
       }
     }
   } catch (e) {
@@ -66,6 +68,20 @@ const videoExamplesData: Omit<VideoExample, 'embedUrl'>[] = [
     videoUrl: "https://www.youtube.com/watch?v=VTxWgMCixCs",
     hint:"soccer loss" 
   },
+  {
+    id: 5,
+    title: "POV: Os mendigos estão arrasados por causa da virginia e do zé",
+    thumb: "https://img.youtube.com/vi/8uiI9Cq72e4/sddefault.jpg",
+    videoUrl: "https://youtu.be/8uiI9Cq72e4",
+    hint: "comedy sketch"
+  },
+  {
+    id: 6,
+    title: "POV: Aracaju - Sergipe",
+    thumb: "https://img.youtube.com/vi/GA8hqCUUIn0/sddefault.jpg",
+    videoUrl: "https://youtu.be/GA8hqCUUIn0",
+    hint: "city drone"
+  }
 ];
 
 const videoExamples: VideoExample[] = videoExamplesData.map(video => ({
