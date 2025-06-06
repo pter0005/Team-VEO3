@@ -1,42 +1,74 @@
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
+import { CheckCircle } from 'lucide-react';
+import InteractiveBackground from '@/components/InteractiveBackground'; // New component for the background
 
 export default function HeroSection() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full text-center">
-        <h1 className="font-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[56px] font-bold mb-6">
-          Lucre todos os dias com vídeos virais <br className="hidden md:block" />
-          usando a nova IA do Google{' '}
-          <span className="bg-gradient-to-r from-primary via-accent to-primary gradient-text">
-            VEO3
-          </span>
-        </h1>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24">
+      <InteractiveBackground />
+      <div id="hero-section-content" className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Left Column */}
+          <div className="text-left">
+            <Badge variant="outline" className="border-primary text-primary mb-3 text-sm py-1 px-3">
+              A Nova Geração de IA
+            </Badge>
+            <h1 className="font-headline text-4xl sm:text-5xl md:text-[52px] lg:text-[56px] font-bold mb-6 leading-tight">
+              Lucre Todos os Dias com{' '}
+              <span className="block md:inline">Vídeos Virais usando</span>
+              <span className="block text-primary">
+                Google VEO3
+              </span>
+            </h1>
+            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
+              Descubra como a inteligência artificial VEO3 pode transformar sua produção de conteúdo e monetização, mesmo sem aparecer ou ter experiência.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-primary-glow-soft transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+              >
+                <Link href="#precos">Quero Começar Agora</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-accent text-accent hover:text-accent-foreground hover:bg-accent font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 w-full sm:w-auto"
+              >
+                <Link href="#como-funciona">Saber Mais</Link>
+              </Button>
+            </div>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center">
+                <CheckCircle className="h-4 w-4 mr-2 text-accent" />
+                Resultados rápidos, mesmo para iniciantes.
+              </li>
+              <li className="flex items-center">
+                <CheckCircle className="h-4 w-4 mr-2 text-accent" />
+                Potencial de viralização massivo.
+              </li>
+            </ul>
+          </div>
 
-        {/* Vídeo Incorporado do YouTube */}
-        <div className="relative max-w-3xl mx-auto my-8 md:my-12 aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/XofVssZlpIE" // Link atualizado
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          {/* Right Column - Video */}
+          <div className="flex justify-center items-center">
+            <div className="relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/XofVssZlpIE"
+                title="YouTube video player - PTER-VEO3"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
         </div>
-
-        <p className="font-dm-sans text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-          Ganhar dinheiro utilizando IA nunca foi tão simples.
-        </p>
-
-        <Button
-          asChild
-          id="comecar"
-          size="lg"
-          className="bg-gradient-orange-red text-primary-foreground font-bold text-lg md:text-xl py-4 px-10 md:py-5 md:px-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-        >
-          <Link href="#precos">Quero Começar Agora</Link>
-        </Button>
       </div>
     </section>
   );
