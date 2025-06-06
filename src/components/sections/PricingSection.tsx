@@ -1,10 +1,10 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -17,16 +17,17 @@ const professionalFeatures = [
 
 export default function PricingSection() {
   const searchParams = useSearchParams();
+  const [finalCheckoutUrl, setFinalCheckoutUrl] = useState('https://pay.kiwify.com.br/fDJSYQh');
 
-  const handlePurchaseClick = () => {
+  useEffect(() => {
     const refParam = searchParams.get('ref');
-    let finalCheckoutUrl = 'https://pay.kiwify.com.br/fDJSYQh'; // Seu link de checkout padrão
+    let url = 'https://pay.kiwify.com.br/fDJSYQh';
 
     if (refParam) {
-      finalCheckoutUrl = `https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`;
+      url = `https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`;
     }
-    window.location.href = finalCheckoutUrl;
-  };
+    setFinalCheckoutUrl(url);
+  }, [searchParams]);
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -64,11 +65,13 @@ export default function PricingSection() {
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
             <Button
+              asChild
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-              onClick={handlePurchaseClick} // A função é chamada no clique
             >
-              Liberar Acesso Agora
+              <a href={finalCheckoutUrl} target="_blank" rel="noopener noreferrer">
+                Liberar Acesso Agora
+              </a>
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>
