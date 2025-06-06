@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link'; // Importar o Link do Next.js
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -18,18 +19,16 @@ const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 
 export default function PricingSection() {
   const searchParams = useSearchParams();
-  const [finalCheckoutUrl, setFinalCheckoutUrl] = useState(BASE_CHECKOUT_URL);
+  const [checkoutUrl, setCheckoutUrl] = useState(BASE_CHECKOUT_URL);
 
   useEffect(() => {
-    // Este useEffect será executado no lado do cliente após a montagem do componente
-    // e sempre que searchParams mudar.
     const refParam = searchParams.get('ref');
     if (refParam) {
-      setFinalCheckoutUrl(`${BASE_CHECKOUT_URL}?afid=${refParam}`);
+      setCheckoutUrl(`${BASE_CHECKOUT_URL}?afid=${refParam}`);
     } else {
-      setFinalCheckoutUrl(BASE_CHECKOUT_URL); // Garante que volte ao normal se o ref for removido
+      setCheckoutUrl(BASE_CHECKOUT_URL);
     }
-  }, [searchParams]); // Dependência para re-executar quando searchParams mudar
+  }, [searchParams]);
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -67,14 +66,13 @@ export default function PricingSection() {
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
             <Button
-              asChild // Importante para que o <Button> renderize como um <a>
+              asChild
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
-              {/* O href é dinâmico baseado no estado finalCheckoutUrl */}
-              <a href={finalCheckoutUrl} target="_blank" rel="noopener noreferrer">
+              <Link href={checkoutUrl} target="_blank" rel="noopener noreferrer">
                 Liberar Acesso Agora
-              </a>
+              </Link>
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>
