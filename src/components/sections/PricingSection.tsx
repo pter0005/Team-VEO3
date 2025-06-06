@@ -39,11 +39,8 @@ export default function PricingSection() {
             <ul className="space-y-3 text-left max-w-md mx-auto">
               {professionalFeatures.map((feature, index) => (
                 <li key={index} className="flex items-center space-x-3">
-                  <feature.icon className={`h-5 w-5 ${feature.glow ? 'text-consulting-glow' : 'text-accent'} flex-shrink-0`} />
-                  <span 
-                    className={`text-foreground/90 text-sm md:text-base font-rubik ${feature.glow ? 'text-consulting-glow font-bold' : ''}`}
-                    style={feature.glow ? {textShadow: '0 0 6px hsl(var(--consulting-glow))'} : {}}
-                  >
+                  <feature.icon className={`h-5 w-5 text-accent flex-shrink-0`} />
+                  <span className={`text-foreground/90 text-sm md:text-base font-rubik`}>
                     {feature.text}
                   </span>
                 </li>
@@ -56,7 +53,7 @@ export default function PricingSection() {
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <Link href="#">Liberar Acesso Agora</Link>
+              <Link href="https://pay.kiwify.com.br/fDJSYQh">Liberar Acesso Agora</Link>
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>

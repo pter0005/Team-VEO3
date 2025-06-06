@@ -35,7 +35,7 @@ export default function HeroSection() {
           size="lg"
           className="bg-gradient-orange-red text-primary-foreground font-bold text-lg md:text-xl py-4 px-10 md:py-5 md:px-12 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
         >
-          <Link href="#precos">Quero Começar Agora</Link>
+          <Link href="https://pay.kiwify.com.br/fDJSYQh">Quero Começar Agora</Link>
         </Button>
       </div>
     </section>
