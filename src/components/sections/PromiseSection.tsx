@@ -97,7 +97,8 @@ export default function PromiseSection() {
           Você <span className="text-primary">Não Precisa Ser Expert</span> Para Criar Vídeos Virais
         </h2>
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
-          Todos os vídeos abaixo foram criados por mim — e em apenas 2 dias, eles viralizaram, ultrapassando 15 milhões de visualizações no TikTok e no Instagram.<br/>Neste curso, você vai aprender exatamente como eu fiz isso — passo a passo — e como qualquer pessoa pode lucrar com a VEO3, mesmo sem entender nada de edição ou tecnologia.
+          Os vídeos abaixo foram criados por mim e, em apenas 2 dias, ultrapassaram 15 milhões de visualizações no TikTok e no Instagram.
+          Neste curso, você vai aprender exatamente como eu consegui esse resultado e como qualquer pessoa pode lucrar com a VEO3, mesmo sem saber nada de edição ou computadores.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {videoExamples.map((video) => (
