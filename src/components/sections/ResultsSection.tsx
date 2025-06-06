@@ -7,7 +7,7 @@ export default function ResultsSection() {
     <section id="resultados" className="py-16 md:py-24 bg-background scroll-mt-20">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-12">
-          Resultados que Conquistei com o <span className="text-primary">Bot Criador de Prompts</span>
+          Resultados que Conquistei com o <span className="text-primary">Bot Prompt Viral</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <Card className="bg-card border-border shadow-xl overflow-hidden group">
@@ -15,7 +15,7 @@ export default function ResultsSection() {
               <div className="relative aspect-video">
                 <Image
                   src="https://placehold.co/600x400.png"
-                  alt="Resultado 1 do Bot Criador de Prompts"
+                  alt="Resultado 1 do Bot Prompt Viral"
                   layout="fill"
                   objectFit="cover"
                   data-ai-hint="success metrics"
@@ -29,7 +29,7 @@ export default function ResultsSection() {
               <div className="relative aspect-video">
                 <Image
                   src="https://placehold.co/600x400.png"
-                  alt="Resultado 2 do Bot Criador de Prompts"
+                  alt="Resultado 2 do Bot Prompt Viral"
                   layout="fill"
                   objectFit="cover"
                   data-ai-hint="achievement chart"
