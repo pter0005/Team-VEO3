@@ -7,7 +7,7 @@ import InteractiveBackground from '@/components/InteractiveBackground';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24 bg-background-end"> {/* Adicionado bg-background-end para contraste */}
       <InteractiveBackground />
       <div id="hero-section-content" className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -32,7 +32,6 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-primary-glow-soft transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
-                {/* Este link é interno à página, não deve ser afetado pela lógica de afiliado */}
                 <Link href="#precos">Quero Começar Agora</Link>
               </Button>
               <Button
@@ -41,7 +40,6 @@ export default function HeroSection() {
                 size="lg"
                 className="border-accent text-accent hover:text-accent-foreground hover:bg-accent font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 w-full sm:w-auto"
               >
-                {/* Este link é interno à página, não deve ser afetado pela lógica de afiliado */}
                 <Link href="#como-funciona">Saber Mais</Link>
               </Button>
             </div>
@@ -70,7 +68,7 @@ export default function HeroSection() {
                 title="YouTube video player - Team VEO3"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen={true} 
+                allowFullScreen // Atributo booleano corrigido
               ></iframe>
             </div>
           </div>
