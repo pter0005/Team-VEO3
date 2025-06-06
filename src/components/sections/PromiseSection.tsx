@@ -1,10 +1,11 @@
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 
 const videoExamples = [
-  { id: 1, title: "POV: Você descobriu o PTER-VEO3", thumb: "https://placehold.co/600x400.png", hint:"abstract tech" },
-  { id: 2, title: "Transformação Cinematográfica com IA", thumb: "https://placehold.co/600x400.png", hint:"movie scene" },
+  { id: 1, title: "POV: Vc é uma gótica em aracajú", thumb: "https://placehold.co/600x400.png", hint:"abstract tech" },
+  { id: 2, title: "POV: Vc é uma gótica em aracajú 2", thumb: "https://placehold.co/600x400.png", hint:"movie scene" },
   { id: 3, title: "Monetização Rápida: Meu Segredo", thumb: "https://placehold.co/600x400.png", hint:"finance chart" },
   { id: 4, title: "IA para Criadores de Conteúdo", thumb: "https://placehold.co/600x400.png", hint:"social media" },
 ];
