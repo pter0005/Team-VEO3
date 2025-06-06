@@ -34,7 +34,7 @@ export default function Header() {
           className="hidden md:inline-flex border-primary text-primary hover:text-primary hover:bg-primary/10 hover:shadow-primary-glow-soft font-sora font-bold uppercase px-7 py-4 rounded-lg text-sm"
           style={{ padding: '16px 28px' }}
         >
-          <Link href="https://pay.kiwify.com.br/fDJSYQh">Começar Agora</Link>
+          <Link href="#precos">Começar Agora</Link>
         </Button>
         <div className="md:hidden">
           <Sheet>
@@ -63,7 +63,7 @@ export default function Header() {
                   className="w-full border-primary text-primary hover:text-primary hover:bg-primary/10 hover:shadow-primary-glow-soft font-sora font-bold uppercase px-7 py-4 rounded-lg text-sm"
                    style={{ padding: '16px 28px' }}
                 >
-                  <Link href="https://pay.kiwify.com.br/fDJSYQh">Começar Agora</Link>
+                  <Link href="#precos">Começar Agora</Link>
                 </Button>
               </div>
             </SheetContent>
