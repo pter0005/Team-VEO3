@@ -11,7 +11,7 @@ import FaqSection from '@/components/sections/FaqSection';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen text-foreground"> {/* Removed bg-background as body now has gradient */}
       <Header />
       <main className="flex-grow">
         <HeroSection />

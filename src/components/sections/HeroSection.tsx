@@ -5,7 +5,7 @@ import { PlayCircle } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="bg-background text-foreground py-16 md:py-24">
+    <section className="bg-transparent text-foreground py-16 md:py-24"> {/* Updated to bg-transparent as body now has gradient */}
       <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full md:w-11/12 lg:w-9/10 text-center">
         <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           Lucre todos os dias com vídeos virais <br className="hidden md:block" />
@@ -17,7 +17,7 @@ export default function HeroSection() {
         
         <div className="relative max-w-3xl mx-auto my-8 md:my-12 aspect-video rounded-xl overflow-hidden shadow-2xl group cursor-pointer border border-primary/20">
           <Image
-            src="https://placehold.co/1280x720.png?text=Demonstra%C3%A7%C3%A3o+do+Curso"
+            src="https://placehold.co/1280x720.png"
             alt="Demonstração do Curso PTER-VEO3"
             layout="fill"
             objectFit="cover"
