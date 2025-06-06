@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
-import { useSearchParams } from 'next/navigation'; // Correto para App Router
+import { useSearchParams } from 'next/navigation';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -20,7 +20,7 @@ export default function PricingSection() {
 
   const handlePurchaseClick = () => {
     const refParam = searchParams.get('ref');
-    let finalCheckoutUrl = 'https://pay.kiwify.com.br/fDJSYQh';
+    let finalCheckoutUrl = 'https://pay.kiwify.com.br/fDJSYQh'; // Seu link de checkout padrão
 
     if (refParam) {
       finalCheckoutUrl = `https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`;
@@ -66,7 +66,7 @@ export default function PricingSection() {
             <Button
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-              onClick={handlePurchaseClick}
+              onClick={handlePurchaseClick} // A função é chamada no clique
             >
               Liberar Acesso Agora
             </Button>
