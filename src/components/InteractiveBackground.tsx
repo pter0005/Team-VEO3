@@ -20,7 +20,7 @@ const InteractiveBackground: React.FC = () => {
   const mouse = useRef<{ x: number | null; y: number | null; radius: number }>({
     x: null,
     y: null,
-    radius: 120, // Mouse interaction radius
+    radius: 180, // Mouse interaction radius - Aumentado de 120 para 180
   });
 
   const [particleColor, setParticleColor] = React.useState('hsla(33, 100%, 50%, 0.6)');
@@ -72,7 +72,7 @@ const InteractiveBackground: React.FC = () => {
           
           const maxDistance = mouse.current.radius;
           // Force is stronger when closer
-          const forceMagnitude = (1 - distanceMouse / maxDistance) * 2.5; // Adjusted strength slightly
+          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.5; // Adjusted strength - Aumentado de 2.5 para 3.5
           
           // Apply force to particle position for direct attraction
           p.x += forceDirectionX * forceMagnitude;
