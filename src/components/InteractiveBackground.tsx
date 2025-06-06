@@ -20,11 +20,11 @@ const InteractiveBackground: React.FC = () => {
   const mouse = useRef<{ x: number | null; y: number | null; radius: number }>({
     x: null,
     y: null,
-    radius: 180, // Mouse interaction radius - Aumentado de 120 para 180
+    radius: 180, 
   });
 
-  const [particleColor, setParticleColor] = React.useState('hsla(33, 100%, 50%, 0.6)');
-  const [lineColor, setLineColor] = React.useState('hsla(33, 100%, 50%, 0.2)');
+  const [particleColor, setParticleColor] = React.useState('hsla(33, 100%, 50%, 0.8)'); // Base alpha increased
+  const [lineColor, setLineColor] = React.useState('hsla(33, 100%, 50%, 0.4)'); // Base alpha increased
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -34,8 +34,8 @@ const InteractiveBackground: React.FC = () => {
       const primaryLightness = computedStyle.getPropertyValue('--primary').split(' ')[2];
       
       if (primaryHue && primarySaturation && primaryLightness) {
-        setParticleColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 0.5)`);
-        setLineColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 0.15)`);
+        setParticleColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 0.8)`); // Keep base alpha high
+        setLineColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 0.4)`); // Keep base alpha high
       }
     }
   }, []);
@@ -49,7 +49,7 @@ const InteractiveBackground: React.FC = () => {
       const y = Math.random() * (canvas.height - radius * 2) + radius;
       const vx = (Math.random() - 0.5) * 0.3; 
       const vy = (Math.random() - 0.5) * 0.3;
-      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.5 + 0.2 });
+      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.2 + 0.8 }); // Opacity range: 0.8 to 1.0
     }
   }, []);
 
@@ -59,32 +59,26 @@ const InteractiveBackground: React.FC = () => {
     for (let i = 0; i < particlesArray.current.length; i++) {
       const p = particlesArray.current[i];
 
-      // Mouse interaction - ATTRACT particles
       if (mouse.current.x !== null && mouse.current.y !== null) {
-        const dxMouse = p.x - mouse.current.x; // distance from particle to mouse (x)
-        const dyMouse = p.y - mouse.current.y; // distance from particle to mouse (y)
+        const dxMouse = p.x - mouse.current.x; 
+        const dyMouse = p.y - mouse.current.y; 
         const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
         
-        if (distanceMouse < mouse.current.radius && distanceMouse > 0) { // distanceMouse > 0 to avoid issues if particle is exactly at mouse
-          // Force direction is TOWARDS mouse (opposite of dxMouse, dyMouse)
+        if (distanceMouse < mouse.current.radius && distanceMouse > 0) { 
           const forceDirectionX = -dxMouse / distanceMouse; 
           const forceDirectionY = -dyMouse / distanceMouse;
           
           const maxDistance = mouse.current.radius;
-          // Force is stronger when closer
-          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.5; // Adjusted strength - Aumentado de 2.5 para 3.5
+          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.5; 
           
-          // Apply force to particle position for direct attraction
           p.x += forceDirectionX * forceMagnitude;
           p.y += forceDirectionY * forceMagnitude;
         }
       }
       
-      // Update particle position based on its velocity
       p.x += p.vx;
       p.y += p.vy;
 
-      // Wall collision
       if (p.x + p.radius > canvas.width || p.x - p.radius < 0) {
         p.vx *= -1;
         if (p.x + p.radius > canvas.width) p.x = canvas.width - p.radius;
@@ -96,13 +90,12 @@ const InteractiveBackground: React.FC = () => {
         if (p.y - p.radius < 0) p.y = p.radius;
       }
       
-      // Draw particle
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
-      ctx.fillStyle = particleColor.replace(/,\s*\d(\.\d+)?\)/, `, ${p.opacity})`);
+      // The particleColor's HSL is used, but its alpha is overridden by p.opacity here
+      ctx.fillStyle = particleColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${p.opacity})`);
       ctx.fill();
 
-      // Draw lines to nearby particles
       for (let j = i + 1; j < particlesArray.current.length; j++) {
         const p2 = particlesArray.current[j];
         const dx = p.x - p2.x;
@@ -112,9 +105,10 @@ const InteractiveBackground: React.FC = () => {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          const lineOpacity = Math.max(0, 0.7 * (1 - distance / 100));
-          ctx.strokeStyle = lineColor.replace(/,\s*\d(\.\d+)?\)/, `, ${lineOpacity})`);
-          ctx.lineWidth = 0.5;
+          const lineOpacity = Math.max(0, 1.0 * (1 - distance / 100)); // Increased max line opacity
+          // The lineColor's HSL is used, but its alpha is overridden by lineOpacity here
+          ctx.strokeStyle = lineColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${lineOpacity})`);
+          ctx.lineWidth = 0.7; // Increased line width
           ctx.stroke();
         }
       }
@@ -141,7 +135,7 @@ const InteractiveBackground: React.FC = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = heroContentElement ? heroContentElement.offsetHeight + 100 : window.innerHeight; 
-      if (canvas.height < 500) canvas.height = window.innerHeight;
+      if (canvas.height < 500) canvas.height = window.innerHeight; // Ensure a minimum height
       initParticles(canvas);
     };
     
@@ -162,6 +156,7 @@ const InteractiveBackground: React.FC = () => {
       mouse.current.y = null;
     };
 
+    // Attach to canvas for interaction only when mouse is over the canvas
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
@@ -179,9 +174,10 @@ const InteractiveBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 -z-10"
+      className="absolute inset-0 -z-10" // Ensure it's behind content
     />
   );
 };
 
 export default InteractiveBackground;
+
