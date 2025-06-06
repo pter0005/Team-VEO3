@@ -1,33 +1,14 @@
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import HeroSection from '@/components/sections/HeroSection';
-import BenefitsSection from '@/components/sections/BenefitsSection';
-import PromiseSection from '@/components/sections/PromiseSection';
-import ResultsSection from '@/components/sections/ResultsSection';
-import CurriculumSection from '@/components/sections/CurriculumSection';
-import SocialProofSection from '@/components/sections/SocialProofSection';
-import BonusesSection from '@/components/sections/BonusesSection';
-import PricingSection from '@/components/sections/PricingSection';
-import FaqSection from '@/components/sections/FaqSection';
-
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen text-foreground">
-      <Header />
-      <main className="flex-grow">
-        <HeroSection />
-        <BenefitsSection />
-        <PromiseSection />
-        <ResultsSection />
-        <CurriculumSection />
-        {/* AccessSection foi removida e seu conteúdo mesclado com CurriculumSection */}
-        <SocialProofSection />
-        <BonusesSection />
-        <PricingSection />
-        <FaqSection />
+    <div className="flex flex-col min-h-screen items-center justify-center bg-background text-foreground p-4">
+      <main className="text-center">
+        <h1 className="text-5xl font-bold font-headline mb-4">Site em Construção</h1>
+        <p className="text-xl text-muted-foreground font-body">Esta página está sendo preparada.</p>
+        <p className="text-sm text-muted-foreground font-body mt-8">
+          (Para restaurar o conteúdo anterior, você pode me pedir para reverter esta alteração.)
+        </p>
       </main>
-      <Footer />
     </div>
   );
 }
