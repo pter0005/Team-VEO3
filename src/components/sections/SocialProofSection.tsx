@@ -25,7 +25,7 @@ const testimonials = [
     id: 3,
     image: "https://i.imgur.com/C8cJkv8.png",
     alt: "Gráfico mostrando aumento de seguidores após usar o Team VEO3",
-    caption: "Meus seguidores não param de crescer!",
+    caption: "Comprei seu curso e o bot de prompt viral tudo sensacional",
     icon: Users,
     hint: "followers increase"
   },
@@ -50,8 +50,7 @@ export default function SocialProofSection() {
                         objectFit="cover"
                         data-ai-hint={testimonial.hint}
                         className={cn(
-                          "transition-transform duration-300 group-hover:scale-105",
-                          testimonial.id === 2 ? "" : "" // Removed object-right, was causing issues, default center is better.
+                          "transition-transform duration-300 group-hover:scale-105"
                         )}
                     />
                  </div>
@@ -68,4 +67,3 @@ export default function SocialProofSection() {
     </section>
   );
 }
-
