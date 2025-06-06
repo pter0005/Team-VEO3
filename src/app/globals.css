@@ -13,13 +13,16 @@ body {
 @layer base {
   :root {
     --true-black: 0 0% 4%; /* #0A0A0A */
-    --background-start: 0 0% 4%; /* #0A0A0A */
-    --background-end: 0 0% 10%; /* #1A1A1A */
     
-    --background: 0 0% 13%; /* Fallback, main bg now via gradient */
-    --foreground: 0 0% 95%; /* #F2F2F2 Light Gray / Off-White */
+    /* Updated for orange gradient background */
+    --background-start: 35 100% 60%; /* Lighter, vibrant orange */
+    --background-end: 25 100% 50%;   /* Deeper, slightly reddish orange */
+    --background: 33 100% 55%;       /* Mid-point orange for fallback */
 
-    --card: 0 0% 18%; /* #2E2E2E */
+    /* Updated for readability on orange background */
+    --foreground: 0 0% 10%;          /* Very dark gray / near black */
+
+    --card: 0 0% 18%; /* #2E2E2E - Dark cards will contrast with orange bg */
     --card-foreground: 0 0% 95%; /* #F2F2F2 */
 
     --popover: 0 0% 18%; /* #2E2E2E */
@@ -31,8 +34,9 @@ body {
     --secondary: 0 0% 25%; /* #404040 */
     --secondary-foreground: 0 0% 95%; /* #F2F2F2 */
 
+    /* Updated for readability on orange background */
     --muted: 0 0% 22%; /* #383838 */
-    --muted-foreground: 0 0% 65%; /* #A6A6A6 Lighter muted text */
+    --muted-foreground: 0 0% 30%; /* Darker muted text */
 
     --accent: 40 65% 50%; /* #D4A62A Yellow-Orange */
     --accent-foreground: 0 0% 10%; /* #1A1A1A Dark text for accent elements */
