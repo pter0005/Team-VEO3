@@ -17,7 +17,7 @@ export default function HeroSection() {
         <div className="relative max-w-3xl mx-auto my-8 md:my-12 aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Substitua pelo ID do seu vídeo do YouTube
+            src="https://www.youtube.com/embed/XofVssZlpIE" // Link atualizado
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
