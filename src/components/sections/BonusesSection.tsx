@@ -31,7 +31,7 @@ export default function BonusesSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {bonuses.map((bonus, index) => (
-            <Card key={index} className="bg-background-end border-border shadow-lg flex flex-col">
+            <Card key={index} className="bg-background-end border-border shadow-lg flex flex-col transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary-glow-soft hover:border-primary/50">
               <CardHeader className="items-center text-center">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
                     <bonus.icon className="h-8 w-8 text-accent" />
