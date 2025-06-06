@@ -8,7 +8,7 @@ const testimonials = [
     id: 1,
     image: "https://i.imgur.com/1FcDkwo.png",
     alt: "Depoimento em mensagem direta mostrando sucesso com Team VEO3",
-    caption: "“Finalmente consegui viralizar! Obrigado Team VEO3!”",
+    caption: "Esse curso me salvou, comecei dia 1 e já consegui minha primeira grana",
     icon: MessageSquare,
     hint: "social proof"
   },
