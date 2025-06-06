@@ -1,11 +1,10 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation'; // Correto para App Router
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -18,14 +17,16 @@ const professionalFeatures = [
 
 export default function PricingSection() {
   const searchParams = useSearchParams();
-  const [checkoutUrl, setCheckoutUrl] = useState('https://pay.kiwify.com.br/fDJSYQh');
 
-  useEffect(() => {
+  const handlePurchaseClick = () => {
     const refParam = searchParams.get('ref');
+    let finalCheckoutUrl = 'https://pay.kiwify.com.br/fDJSYQh';
+
     if (refParam) {
-      setCheckoutUrl(`https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`);
+      finalCheckoutUrl = `https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`;
     }
-  }, [searchParams]);
+    window.location.href = finalCheckoutUrl;
+  };
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -63,11 +64,11 @@ export default function PricingSection() {
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
             <Button
-              asChild
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+              onClick={handlePurchaseClick}
             >
-              <Link href={checkoutUrl}>Liberar Acesso Agora</Link>
+              Liberar Acesso Agora
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>
