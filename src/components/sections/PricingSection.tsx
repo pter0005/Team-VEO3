@@ -1,8 +1,11 @@
+'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -14,6 +17,16 @@ const professionalFeatures = [
 
 
 export default function PricingSection() {
+  const searchParams = useSearchParams();
+  const [checkoutUrl, setCheckoutUrl] = useState('https://pay.kiwify.com.br/fDJSYQh');
+
+  useEffect(() => {
+    const refParam = searchParams.get('ref');
+    if (refParam) {
+      setCheckoutUrl(`https://pay.kiwify.com.br/fDJSYQh?afid=${refParam}`);
+    }
+  }, [searchParams]);
+
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
       <div className="container mx-auto max-w-3xl px-4 md:px-6 text-center">
@@ -54,7 +67,7 @@ export default function PricingSection() {
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
-              <Link href="https://pay.kiwify.com.br/fDJSYQh">Liberar Acesso Agora</Link>
+              <Link href={checkoutUrl}>Liberar Acesso Agora</Link>
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>
