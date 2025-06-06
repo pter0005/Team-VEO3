@@ -30,7 +30,7 @@ export default function CurriculumSection() {
                 {/* Div para efeito de hover e posicionamento absoluto da imagem */}
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
-                    src="https://placehold.co/600x800.png"
+                    src="https://i.imgur.com/QGk5M3G.png"
                     alt="Nikola Tesla com uma lâmpada brilhante, simbolizando ideias e inovação com IA."
                     layout="fill"
                     objectFit="cover"
