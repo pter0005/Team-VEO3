@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     id: 2,
-    image: "https://i.imgur.com/yVMmYXf.png",
+    image: "https://i.imgur.com/wr9aTj8.png",
     alt: "Print de tela mostrando ganhos financeiros após usar o Team VEO3",
     caption: "+300k views no primeiro vídeo seguindo o método.",
     icon: BarChart3,
@@ -68,3 +68,4 @@ export default function SocialProofSection() {
     </section>
   );
 }
+
