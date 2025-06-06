@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -18,22 +18,19 @@ const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 
 export default function PricingSection() {
   const searchParams = useSearchParams();
+  const [checkoutUrl, setCheckoutUrl] = useState(BASE_CHECKOUT_URL);
 
-  const handlePurchaseClick = () => {
-    // Esta função SÓ é chamada quando o botão é clicado.
-    // Ela NÃO executa quando a página carrega.
+  useEffect(() => {
+    // Este código roda no cliente APÓS a página carregar.
+    // Ele define o link do botão.
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
 
     if (refParam) {
       finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${refParam}`;
     }
-
-    // Apenas redireciona aqui, após o clique e após construir a URL.
-    if (typeof window !== 'undefined') {
-      window.location.href = finalCheckoutUrl;
-    }
-  };
+    setCheckoutUrl(finalCheckoutUrl);
+  }, [searchParams]); // Roda quando searchParams estiver disponível/mudar
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -71,12 +68,14 @@ export default function PricingSection() {
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
             <Button
+              asChild // Faz o Button renderizar o <a> como seu filho
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-              onClick={handlePurchaseClick} // A lógica de redirecionamento está AQUI e SÓ AQUI
-              type="button" 
             >
-              Liberar Acesso Agora
+              {/* O link é definido pelo estado checkoutUrl. target="_blank" abre em nova aba. */}
+              <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
+                Liberar Acesso Agora
+              </a>
             </Button>
             <p className="text-xs text-muted-foreground font-rubik">Compra segura. Garantia de 7 dias.</p>
           </CardFooter>
