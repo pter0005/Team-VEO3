@@ -10,7 +10,7 @@ export default function ResultsSection() {
           Resultados que Conquistei com o <span className="text-primary">Bot Prompt Viral</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <Card className="bg-card border-border shadow-xl overflow-hidden group">
+          <Card className="bg-card border-border shadow-xl overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft">
             <CardContent className="p-0">
               <div className="relative aspect-video">
                 <Image
@@ -24,7 +24,7 @@ export default function ResultsSection() {
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-card border-border shadow-xl overflow-hidden group">
+          <Card className="bg-card border-border shadow-xl overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft">
             <CardContent className="p-0">
               <div className="relative aspect-video">
                 <Image
@@ -43,3 +43,4 @@ export default function ResultsSection() {
     </section>
   );
 }
+
