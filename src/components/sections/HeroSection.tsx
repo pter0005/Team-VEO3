@@ -9,7 +9,7 @@ export default function HeroSection() {
           Lucre todos os dias com vídeos virais <br className="hidden md:block" />
           usando a nova IA do Google{' '}
           <span className="bg-gradient-to-r from-primary via-accent to-primary gradient-text">
-            PTER-VEO3
+            VEO3
           </span>
         </h1>
 
