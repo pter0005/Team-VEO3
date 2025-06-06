@@ -1,10 +1,11 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import React from 'react'; // React import é bom ter, mesmo que não usado explicitamente em todos os 'use client'
+import React from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -17,16 +18,19 @@ const professionalFeatures = [
 const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 
 export default function PricingSection() {
+  // useSearchParams deve ser chamado no corpo do componente de cliente
   const searchParams = useSearchParams();
 
   const handlePurchaseClick = () => {
-    // Esta função SÓ é chamada quando o botão é clicado.
+    // Lê o parâmetro 'ref' da URL atual
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
+
     if (refParam) {
       finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${refParam}`;
     }
-    // window só está disponível no cliente, o que é o caso aqui já que é uma ação de clique.
+
+    // Redireciona para a URL final
     if (typeof window !== 'undefined') {
       window.location.href = finalCheckoutUrl;
     }
@@ -70,7 +74,7 @@ export default function PricingSection() {
             <Button
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
-              onClick={handlePurchaseClick} // A mágica acontece aqui, SÓ NO CLIQUE
+              onClick={handlePurchaseClick} // A lógica é disparada aqui
               type="button" 
             >
               Liberar Acesso Agora
