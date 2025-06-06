@@ -7,12 +7,16 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif; /* Default body font */
 }
 
 @layer base {
   :root {
-    --background: 0 0% 13%; /* #222222 Dark Gray */
+    --true-black: 0 0% 4%; /* #0A0A0A */
+    --background-start: 0 0% 4%; /* #0A0A0A */
+    --background-end: 0 0% 10%; /* #1A1A1A */
+    
+    --background: 0 0% 13%; /* Fallback, main bg now via gradient */
     --foreground: 0 0% 95%; /* #F2F2F2 Light Gray / Off-White */
 
     --card: 0 0% 18%; /* #2E2E2E */
@@ -40,6 +44,8 @@ body {
     --input: 0 0% 28%; /* #474747 */
     --ring: 33 100% 50%; /* #FF8C00 Primary color for rings */
 
+    --consulting-glow: 18 100% 50%; /* #FF4800 */
+
     --radius: 0.5rem;
 
     /* Chart colors can remain as is or be adjusted to fit the new theme */
@@ -59,12 +65,6 @@ body {
     --sidebar-border: 0 0% 20%;
     --sidebar-ring: 33 100% 50%;
   }
-
-  /* Shadcn dark theme is not explicitly used by adding .dark class to html tag,
-     so we define the default theme as dark. 
-     If a light theme is needed, the .dark class variables would need to be adjusted
-     and a mechanism to toggle it implemented. For now, this setup makes dark default.
-  */
 }
 
 @layer base {
@@ -72,7 +72,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-gradient-to-b from-background to-card text-foreground;
+    @apply bg-gradient-to-b from-[hsl(var(--background-start))] to-[hsl(var(--background-end))] text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

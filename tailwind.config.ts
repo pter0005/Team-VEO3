@@ -12,10 +12,16 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
+        sora: ['Sora', 'sans-serif'],
+        rubik: ['Rubik', 'sans-serif'],
+        'dm-sans': ['DM Sans', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
-        background: 'hsl(var(--background))',
+        background: 'hsl(var(--background))', /* Fallback */
+        'background-start': 'hsl(var(--background-start))',
+        'background-end': 'hsl(var(--background-end))',
+        'true-black': 'hsl(var(--true-black))',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',
@@ -45,6 +51,7 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        'consulting-glow': 'hsl(var(--consulting-glow))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -100,6 +107,10 @@ export default {
       },
       backgroundImage: {
         'gradient-orange-red': 'linear-gradient(to right, hsl(var(--primary)), #FF3C00)',
+      },
+      boxShadow: {
+        'primary-glow-soft': '0 0 15px 2px hsl(var(--primary) / 0.5)',
+        'primary-glow': '0 0 15px 5px hsl(var(--primary) / 0.7)',
       }
     },
   },

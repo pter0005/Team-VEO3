@@ -34,18 +34,18 @@ const faqItems = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-16 md:py-24 bg-card scroll-mt-20">
+    <section id="faq" className="py-16 md:py-24 bg-card/50 scroll-mt-20">
       <div className="container mx-auto max-w-3xl px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-12">
           Perguntas <span className="text-primary">Frequentes</span>
         </h2>
         <Accordion type="single" collapsible className="w-full space-y-4">
           {faqItems.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-background border border-border rounded-lg shadow-md">
-              <AccordionTrigger className="px-6 py-4 text-left font-semibold text-base md:text-lg hover:no-underline hover:text-primary transition-colors [&[data-state=open]>svg]:text-primary">
+            <AccordionItem key={index} value={`item-${index}`} className="bg-[#1A1A1A] border border-border rounded-lg shadow-md">
+              <AccordionTrigger className="px-6 py-4 text-left font-inter font-semibold text-lg tracking-wider hover:no-underline hover:text-primary transition-colors [&[data-state=open]>svg]:text-primary">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-4 pt-0 text-muted-foreground data-[state=open]:bg-muted/10">
+              <AccordionContent className="px-6 pb-4 pt-0 text-muted-foreground data-[state=open]:bg-muted/10 font-rubik text-base tracking-wide">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

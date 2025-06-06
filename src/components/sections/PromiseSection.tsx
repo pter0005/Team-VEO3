@@ -3,26 +3,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 
 const videoExamples = [
-  { id: 1, title: "POV: Você descobriu o PTER-VEO3", thumb: "https://placehold.co/600x400.png?text=POV+Video", hint:"abstract tech" },
-  { id: 2, title: "Transformação Cinematográfica com IA", thumb: "https://placehold.co/600x400.png?text=Cinema+Style", hint:"movie scene" },
-  { id: 3, title: "Monetização Rápida: Meu Segredo", thumb: "https://placehold.co/600x400.png?text=Money+Tips", hint:"finance chart" },
-  { id: 4, title: "IA para Criadores de Conteúdo", thumb: "https://placehold.co/600x400.png?text=Creator+AI", hint:"social media" },
+  { id: 1, title: "POV: Você descobriu o PTER-VEO3", thumb: "https://placehold.co/600x400.png", hint:"abstract tech" },
+  { id: 2, title: "Transformação Cinematográfica com IA", thumb: "https://placehold.co/600x400.png", hint:"movie scene" },
+  { id: 3, title: "Monetização Rápida: Meu Segredo", thumb: "https://placehold.co/600x400.png", hint:"finance chart" },
+  { id: 4, title: "IA para Criadores de Conteúdo", thumb: "https://placehold.co/600x400.png", hint:"social media" },
 ];
 
 export default function PromiseSection() {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-24 bg-[#111111]">
       <div className="container mx-auto max-w-7xl px-4 md:px-6 text-center">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="font-sora text-3xl md:text-4xl font-bold mb-6">
           Você <span className="text-primary">Não Precisa Ser Expert</span> Para Criar Vídeos Virais
         </h2>
-        <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12">
+        <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
           Os vídeos abaixo foram criados usando apenas inteligência artificial (Google Veo 3). 
           Com o método PTER-VEO3, qualquer pessoa consegue lucrar com vídeos sem precisar aparecer ou ter experiência com edição.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoExamples.map((video) => (
-            <Card key={video.id} className="overflow-hidden group bg-card border-border hover:shadow-xl transition-shadow duration-300">
+            <Card key={video.id} className="overflow-hidden group bg-card border-border hover:shadow-xl hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-0">
                 <div className="relative aspect-video">
                   <Image
@@ -38,7 +38,7 @@ export default function PromiseSection() {
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-sm text-foreground truncate group-hover:text-primary transition-colors">{video.title}</h3>
+                  <h3 className="font-sora font-semibold text-sm text-foreground truncate group-hover:text-primary transition-colors">{video.title}</h3>
                 </div>
               </CardContent>
             </Card>

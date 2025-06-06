@@ -5,9 +5,9 @@ import { PlayCircle } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="bg-transparent text-foreground py-16 md:py-24"> {/* Updated to bg-transparent as body now has gradient */}
-      <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full md:w-11/12 lg:w-9/10 text-center">
-        <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+    <section className="py-16 md:py-24"> 
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full text-center">
+        <h1 className="font-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[56px] font-bold mb-6">
           Lucre todos os dias com vídeos virais <br className="hidden md:block" />
           usando a nova IA do Google{' '}
           <span className="bg-gradient-to-r from-primary via-accent to-primary gradient-text">
@@ -32,7 +32,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-8">
+        <p className="font-dm-sans text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
           Ganhar dinheiro utilizando IA nunca foi tão simples.
         </p>
 

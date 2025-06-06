@@ -28,23 +28,23 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-card text-card-foreground py-12 md:py-16">
+    <footer className="bg-true-black text-foreground py-12 md:py-16">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <Logo />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground font-rubik">
               A melhor metodologia para lucrar com IA, feita para pessoas comuns e criadores ambiciosos.
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="font-headline text-lg font-semibold">Links Rápidos</h3>
+            <h3 className="font-sora text-lg font-semibold">Links Rápidos</h3>
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors font-rubik"
                   >
                     {item.label}
                   </Link>
@@ -53,8 +53,8 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="font-headline text-lg font-semibold">Contato</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="font-sora text-lg font-semibold">Contato</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground font-rubik">
               <li>Email: pteracademy@gmail.com</li>
               <li>WhatsApp: +55 (71) 9286-1297</li>
             </ul>
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground font-rubik">
           &copy; {new Date().getFullYear()} PTER-VEO3. Todos os direitos reservados.
         </div>
       </div>

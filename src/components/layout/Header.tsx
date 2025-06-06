@@ -14,7 +14,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex h-[80px] max-w-7xl items-center justify-between px-4 md:px-6">
         <Logo />
         <nav className="hidden md:flex items-center space-x-6">
@@ -30,7 +30,8 @@ export default function Header() {
         </nav>
         <Button
           asChild
-          className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground uppercase font-bold px-7 py-4 rounded-lg text-sm"
+          variant="outline"
+          className="hidden md:inline-flex border-primary text-primary hover:text-primary hover:bg-primary/10 hover:shadow-primary-glow-soft font-sora font-bold uppercase px-7 py-4 rounded-lg text-sm"
           style={{ padding: '16px 28px' }}
         >
           <Link href="#comecar">Começar Agora</Link>
@@ -38,11 +39,11 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-foreground">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-background">
+            <SheetContent side="right" className="w-[280px] bg-background-end">
               <div className="flex flex-col space-y-6 p-6">
                 <Logo />
                 <nav className="flex flex-col space-y-4">
@@ -58,7 +59,8 @@ export default function Header() {
                 </nav>
                 <Button
                   asChild
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground uppercase font-bold px-7 py-4 rounded-lg text-sm"
+                  variant="outline"
+                  className="w-full border-primary text-primary hover:text-primary hover:bg-primary/10 hover:shadow-primary-glow-soft font-sora font-bold uppercase px-7 py-4 rounded-lg text-sm"
                    style={{ padding: '16px 28px' }}
                 >
                   <Link href="#comecar">Começar Agora</Link>
