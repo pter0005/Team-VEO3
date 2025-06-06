@@ -17,7 +17,7 @@ export default function AccessSection() {
           <div className="relative aspect-[4/3] md:aspect-auto md:h-full rounded-lg overflow-hidden shadow-2xl order-last md:order-first">
             <Image
               src="https://placehold.co/600x750.png"
-              alt="Homem com lâmpada e raios simbolizando ideias e acesso ao conhecimento"
+              alt="Nikola Tesla com lâmpada e raios simbolizando ideias e acesso ao conhecimento"
               layout="fill"
               objectFit="cover"
               data-ai-hint="nikola tesla idea"
