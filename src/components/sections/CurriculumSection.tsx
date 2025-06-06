@@ -27,12 +27,12 @@ export default function CurriculumSection() {
               <div className="md:w-1/3 md:flex-shrink-0 w-full relative aspect-video md:aspect-auto md:min-h-[450px] overflow-hidden">
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
-                    src="https://placehold.co/600x800.png" 
-                    alt="Conteúdo do treinamento PTER-VEO3"
+                    src="https://placehold.co/600x800.png"
+                    alt="Visual representando o conteúdo e aprendizado do curso"
                     layout="fill"
                     objectFit="cover"
-                    data-ai-hint="training content" 
-                    className="rounded-none md:rounded-l-lg md:rounded-r-none" 
+                    data-ai-hint="learning course"
+                    className="rounded-none md:rounded-l-lg md:rounded-r-none"
                   />
                 </div>
               </div>
