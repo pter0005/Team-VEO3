@@ -55,9 +55,9 @@ const videoExamplesData: Omit<VideoExample, 'embedUrl'>[] = [
   { 
     id: 3, 
     title: "POV: Vc está dando fuga na guarda colonial francesa", 
-    thumb: "https://placehold.co/600x400.png", 
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Placeholder video, update if a specific video is intended
-    hint:"historical chase" 
+    thumb: "https://img.youtube.com/vi/flZ5EBFnLqM/sddefault.jpg", 
+    videoUrl: "https://www.youtube.com/watch?v=flZ5EBFnLqM",
+    hint:"action scene" 
   },
   { 
     id: 4, 
@@ -83,7 +83,7 @@ export default function PromiseSection() {
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
           Os vídeos abaixo foram criados por mim, em apenas 2 dias eu viralizei eles alcançando mais de 15 milhões de visualização no TikTok e no Instagram. E nesse curso você vai aprender como fiz isso, e como qualquer pessoa consegue lucrar com a VEO3 sem precisar ser o expert em computadores.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {videoExamples.map((video) => (
             <Card 
               key={video.id} 
@@ -92,15 +92,14 @@ export default function PromiseSection() {
               <CardContent className="p-0 flex-grow flex flex-col">
                 <div className="relative w-full aspect-video">
                   <iframe
-                    className="absolute top-0 left-0 w-full h-full"
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
                     src={video.embedUrl}
-                    title={video.title} // Title is still good for accessibility
+                    title={video.title} 
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
-                {/* The title bar below the video has been removed */}
               </CardContent>
             </Card>
           ))}
