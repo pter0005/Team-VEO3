@@ -22,9 +22,12 @@ export default function CurriculumSection() {
           O Que Você Vai Aprender e Ter Acesso <br className="sm:hidden" /> Dentro do Treinamento <span className="text-primary">PTER-VEO3</span>
         </h2>
         <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden group">
-          <CardContent className="p-0 md:p-0">
-            <div className="md:flex md:items-stretch">
-              <div className="md:w-1/3 relative aspect-square md:aspect-auto md:min-h-[450px] h-64 w-full overflow-hidden">
+          <CardContent className="p-0">
+            {/* Em telas md e maiores, este div será um container flex */}
+            <div className="md:flex md:items-stretch w-full">
+              {/* Container da Imagem: Ocupa 1/3 da largura em telas md+, altura responsiva */}
+              <div className="md:w-1/3 md:flex-shrink-0 w-full relative aspect-video md:aspect-auto md:min-h-[450px] overflow-hidden">
+                {/* Div para efeito de hover e posicionamento absoluto da imagem */}
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
                     src="https://placehold.co/600x800.png"
@@ -32,11 +35,12 @@ export default function CurriculumSection() {
                     layout="fill"
                     objectFit="cover"
                     data-ai-hint="nikola tesla idea"
-                    className="rounded-none md:rounded-l-lg md:rounded-r-none"
+                    className="rounded-none md:rounded-l-lg md:rounded-r-none" // Arredonda canto esquerdo em md+
                   />
                 </div>
               </div>
-              <div className="md:w-2/3 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+              {/* Container do Texto: Ocupa 2/3 da largura em telas md+ */}
+              <div className="md:w-2/3 md:flex-shrink-0 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                 <ul className="space-y-4">
                   {summarizedCurriculumItems.map((item, index) => (
                     <li key={index} className="flex items-start space-x-3">
