@@ -9,7 +9,6 @@ interface Particle {
   radius: number;
   vx: number;
   vy: number;
-  // originalX and originalY are no longer strictly needed for returning, but can be kept for other potential uses or debugging.
   originalX: number; 
   originalY: number;
   opacity: number;
@@ -48,7 +47,6 @@ const InteractiveBackground: React.FC = () => {
       const radius = Math.random() * 1.5 + 0.5;
       const x = Math.random() * (canvas.width - radius * 2) + radius;
       const y = Math.random() * (canvas.height - radius * 2) + radius;
-      // Increased base velocity for more noticeable movement
       const vx = (Math.random() - 0.5) * 0.3; 
       const vy = (Math.random() - 0.5) * 0.3;
       particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.5 + 0.2 });
@@ -61,27 +59,24 @@ const InteractiveBackground: React.FC = () => {
     for (let i = 0; i < particlesArray.current.length; i++) {
       const p = particlesArray.current[i];
 
-      // Mouse interaction
+      // Mouse interaction - ATTRACT particles
       if (mouse.current.x !== null && mouse.current.y !== null) {
-        const dxMouse = p.x - mouse.current.x;
-        const dyMouse = p.y - mouse.current.y;
+        const dxMouse = p.x - mouse.current.x; // distance from particle to mouse (x)
+        const dyMouse = p.y - mouse.current.y; // distance from particle to mouse (y)
         const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
         
-        if (distanceMouse < mouse.current.radius) {
-          const forceDirectionX = dxMouse / distanceMouse;
-          const forceDirectionY = dyMouse / distanceMouse;
-          const maxDistance = mouse.current.radius;
-          // Increased push strength
-          const force = (1 - distanceMouse / maxDistance) * 3.0; 
+        if (distanceMouse < mouse.current.radius && distanceMouse > 0) { // distanceMouse > 0 to avoid issues if particle is exactly at mouse
+          // Force direction is TOWARDS mouse (opposite of dxMouse, dyMouse)
+          const forceDirectionX = -dxMouse / distanceMouse; 
+          const forceDirectionY = -dyMouse / distanceMouse;
           
-          // Apply force to velocity for a smoother push, or directly to position for immediate push
-          // For this iteration, let's apply to position for a more direct feel, but could be changed to vx, vy
-          p.x += forceDirectionX * force;
-          p.y += forceDirectionY * force;
-
-          // Dampen velocity slightly when pushed to prevent extreme speeds if mouse stays over particle
-          p.vx *= 0.96;
-          p.vy *= 0.96;
+          const maxDistance = mouse.current.radius;
+          // Force is stronger when closer
+          const forceMagnitude = (1 - distanceMouse / maxDistance) * 2.5; // Adjusted strength slightly
+          
+          // Apply force to particle position for direct attraction
+          p.x += forceDirectionX * forceMagnitude;
+          p.y += forceDirectionY * forceMagnitude;
         }
       }
       
