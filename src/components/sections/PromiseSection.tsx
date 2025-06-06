@@ -17,8 +17,8 @@ export default function PromiseSection() {
           Você <span className="text-primary">Não Precisa Ser Expert</span> Para Criar Vídeos Virais
         </h2>
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
-          Os vídeos abaixo foram criados usando apenas inteligência artificial (Google Veo 3). 
-          Com o método PTER-VEO3, qualquer pessoa consegue lucrar com vídeos sem precisar aparecer ou ter experiência com edição.
+          Os vídeos abaixo foram criados por mim, usando apenas inteligência artificial (Google Veo 3). 
+          Com as estratégias que usei, qualquer pessoa consegue lucrar com vídeos sem precisar aparecer ou ter experiência com edição.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoExamples.map((video) => (
