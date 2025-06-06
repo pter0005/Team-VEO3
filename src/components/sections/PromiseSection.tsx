@@ -7,9 +7,9 @@ import { PlayCircle } from 'lucide-react';
 interface VideoExample {
   id: number;
   title: string;
-  thumb?: string; // Thumbnail can be optional if we're embedding directly
-  videoUrl: string; // Original watch URL
-  embedUrl: string; // URL for iframe embedding
+  thumb?: string; 
+  videoUrl: string; 
+  embedUrl: string; 
   hint: string;
 }
 
@@ -29,14 +29,13 @@ function getYouTubeEmbedUrl(watchUrl: string): string {
       }
     }
   } catch (e) {
-    // Invalid URL or not a YouTube URL, use a placeholder
-    return 'https://www.youtube.com/embed/XofVssZlpIE'; // Default placeholder video
+    return 'https://www.youtube.com/embed/XofVssZlpIE'; 
   }
 
   if (videoId) {
     return `https://www.youtube.com/embed/${videoId}`;
   }
-  return 'https://www.youtube.com/embed/XofVssZlpIE'; // Fallback placeholder
+  return 'https://www.youtube.com/embed/XofVssZlpIE'; 
 }
 
 const videoExamplesData: Omit<VideoExample, 'embedUrl'>[] = [
@@ -114,7 +113,7 @@ export default function PromiseSection() {
                     title={video.title} 
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                    allowFullScreen={true}
                   ></iframe>
                 </div>
               </CardContent>

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import { useCallback } from 'react'; // Import useCallback
+import { useCallback } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -19,18 +19,18 @@ const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 export default function PricingSection() {
   const searchParams = useSearchParams();
 
-  // A função de clique agora é definida com useCallback para otimização,
-  // e ela lê o searchParams diretamente quando o botão é clicado.
   const handlePurchaseClick = useCallback(() => {
+    // Lê o parâmetro 'ref' da URL ATUAL no momento do clique.
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
 
     if (refParam) {
       finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${refParam}`;
     }
-    // Abre em uma nova aba
+    
+    // Abre o link em uma nova aba.
     window.open(finalCheckoutUrl, '_blank', 'noopener,noreferrer');
-  }, [searchParams]); // searchParams é uma dependência do useCallback
+  }, [searchParams]); // searchParams é uma dependência para recriar a função se ele mudar.
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -67,8 +67,9 @@ export default function PricingSection() {
             </ul>
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
+            {/* O botão agora chama handlePurchaseClick, que faz o redirecionamento */}
             <Button
-              onClick={handlePurchaseClick} // O redirecionamento agora ocorre aqui, DENTRO desta função
+              onClick={handlePurchaseClick} 
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >

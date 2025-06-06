@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 // ESTE ARQUIVO É APENAS PARA A ESTRUTURA DA PÁGINA E METADADOS.
 // NÃO ADICIONE NENHUM window.location.href OU LÓGICA DE searchParams AQUI QUE RODE NO CARREGAMENTO DA PÁGINA.
 // QUALQUER SCRIPT <script>...</script> AQUI NÃO DEVE FAZER REDIRECIONAMENTO.
+// O OBJETIVO É QUE A PÁGINA CARREGUE NORMALMENTE E SÓ REDIRECIONE QUANDO O USUÁRIO CLICAR NO BOTÃO DE COMPRA.
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://teamveo3.com'),

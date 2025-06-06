@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle } from 'lucide-react';
-import InteractiveBackground from '@/components/InteractiveBackground'; // New component for the background
+import InteractiveBackground from '@/components/InteractiveBackground'; 
 
 export default function HeroSection() {
   return (
@@ -32,6 +32,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:shadow-primary-glow-soft transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
+                {/* Este link é interno à página, não deve ser afetado pela lógica de afiliado */}
                 <Link href="#precos">Quero Começar Agora</Link>
               </Button>
               <Button
@@ -40,6 +41,7 @@ export default function HeroSection() {
                 size="lg"
                 className="border-accent text-accent hover:text-accent-foreground hover:bg-accent font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 w-full sm:w-auto"
               >
+                {/* Este link é interno à página, não deve ser afetado pela lógica de afiliado */}
                 <Link href="#como-funciona">Saber Mais</Link>
               </Button>
             </div>
@@ -68,7 +70,7 @@ export default function HeroSection() {
                 title="YouTube video player - Team VEO3"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+                allowFullScreen={true} 
               ></iframe>
             </div>
           </div>
