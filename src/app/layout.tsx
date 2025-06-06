@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Veo Viral',
-  description: 'Lucre todos os dias com vídeos virais usando a nova IA do Google PTER-VEO3',
+  description: 'Lucre todos os dias com vídeos virais usando a nova IA do Google Team Veo3',
 };
 
 export default function RootLayout({

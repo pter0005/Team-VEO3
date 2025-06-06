@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground font-rubik">
-          &copy; {new Date().getFullYear()} PTER-VEO3. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Team Veo3. Todos os direitos reservados.
         </div>
       </div>
     </footer>

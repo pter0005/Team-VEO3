@@ -7,8 +7,8 @@ const testimonials = [
   {
     id: 1,
     image: "https://placehold.co/400x300.png",
-    alt: "Depoimento em mensagem direta mostrando sucesso com PTER-VEO3",
-    caption: "“Finalmente consegui viralizar! Obrigado PTER-VEO3!”",
+    alt: "Depoimento em mensagem direta mostrando sucesso com Team Veo3",
+    caption: "“Finalmente consegui viralizar! Obrigado Team Veo3!”",
     icon: MessageSquare,
     hint: "testimonial message"
   },
@@ -23,7 +23,7 @@ const testimonials = [
   {
     id: 3,
     image: "https://placehold.co/400x300.png",
-    alt: "Gráfico mostrando aumento de seguidores após usar o PTER-VEO3",
+    alt: "Gráfico mostrando aumento de seguidores após usar o Team Veo3",
     caption: "Meus seguidores não param de crescer!",
     icon: Users,
     hint: "followers increase"
@@ -39,7 +39,7 @@ export default function SocialProofSection() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-card border-border shadow-lg overflow-hidden group">
+            <Card key={testimonial.id} className="bg-card border-border shadow-lg overflow-hidden group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary-glow-soft hover:border-primary/50">
               <CardContent className="p-0">
                  <div className="relative aspect-[4/3] overflow-hidden">
                     <Image

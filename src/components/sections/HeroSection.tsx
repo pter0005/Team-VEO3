@@ -65,7 +65,7 @@ export default function HeroSection() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/XofVssZlpIE"
-                title="YouTube video player - PTER-VEO3"
+                title="YouTube video player - Team Veo3"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

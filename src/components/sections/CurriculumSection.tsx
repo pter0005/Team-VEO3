@@ -19,9 +19,9 @@ export default function CurriculumSection() {
     <section id="como-funciona" className="py-16 md:py-24 bg-card/50 scroll-mt-20">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-12">
-          O Que Você Vai Aprender e Ter Acesso <br className="sm:hidden" /> Dentro do Treinamento <span className="text-primary">PTER-VEO3</span>
+          O Que Você Vai Aprender e Ter Acesso <br className="sm:hidden" /> Dentro do Treinamento <span className="text-primary">Team Veo3</span>
         </h2>
-        <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden group">
+        <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft hover:border-primary/50">
           <CardContent className="p-0">
             <div className="md:flex md:items-stretch w-full">
               <div className="md:w-1/3 md:flex-shrink-0 w-full relative aspect-video md:aspect-auto md:min-h-[450px] overflow-hidden">

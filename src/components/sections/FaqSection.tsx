@@ -12,11 +12,11 @@ const faqItems = [
   },
   {
     question: "Preciso ser bom em tecnologia?",
-    answer: "Não! O curso PTER-VEO3 foi desenhado para ser acessível a todos, mesmo que você não tenha nenhuma experiência com IA ou edição de vídeos. Mostramos o passo a passo de forma simples e direta.",
+    answer: "Não! O curso Team Veo3 foi desenhado para ser acessível a todos, mesmo que você não tenha nenhuma experiência com IA ou edição de vídeos. Mostramos o passo a passo de forma simples e direta.",
   },
   {
     question: "Esse curso é só mais um?",
-    answer: "Definitivamente não. O PTER-VEO3 é focado na novíssima IA do Google, Veo 3, e em estratégias práticas e atuais para viralização e monetização. É um conhecimento de ponta que poucos dominam.",
+    answer: "Definitivamente não. O Team Veo3 é focado na novíssima IA do Google, Veo 3, e em estratégias práticas e atuais para viralização e monetização. É um conhecimento de ponta que poucos dominam.",
   },
   {
     question: "Dá pra ganhar dinheiro mesmo?",
@@ -41,7 +41,7 @@ export default function FaqSection() {
         </h2>
         <Accordion type="single" collapsible className="w-full space-y-4">
           {faqItems.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-[#1A1A1A] border border-border rounded-lg shadow-md">
+            <AccordionItem key={index} value={`item-${index}`} className="bg-[#1A1A1A] border border-border rounded-lg shadow-md transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft hover:border-primary/50">
               <AccordionTrigger className="px-6 py-4 text-left font-inter font-semibold text-lg tracking-wider hover:no-underline hover:text-primary transition-colors [&[data-state=open]>svg]:text-primary">
                 {item.question}
               </AccordionTrigger>

@@ -4,7 +4,7 @@ import { CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const professionalFeatures = [
-  { text: 'Curso Completo PTER-VEO3', icon: CheckCircle },
+  { text: 'Curso Completo Team Veo3', icon: CheckCircle },
   { text: 'Todos os Bônus Exclusivos', icon: CheckCircle },
   { text: 'Acesso Vitalício e Atualizações Futuras', icon: Sparkles },
   { text: 'Comunidade VIP de Networking', icon: CheckCircle },
@@ -21,7 +21,7 @@ export default function PricingSection() {
         </h2>
         <p className="text-muted-foreground md:text-lg mb-10 font-rubik">Uma oportunidade única para transformar sua presença digital e financeira.</p>
         
-        <Card className="bg-foreground/5 backdrop-blur-lg border border-foreground/10 shadow-2xl">
+        <Card className="bg-foreground/5 backdrop-blur-lg border border-foreground/10 shadow-2xl transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft hover:border-primary/50">
           <CardHeader>
             <CardTitle className="font-headline text-2xl md:text-3xl text-foreground">Plano Profissional 1 Ano</CardTitle>
             <CardDescription className="text-muted-foreground text-base md:text-lg font-rubik">

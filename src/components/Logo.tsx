@@ -39,7 +39,7 @@ export default function Logo() {
     <a href="/" className="flex items-center space-x-2">
       <TechIcon className="text-primary h-7 w-7" />
       <span className="font-headline text-2xl font-bold text-primary">
-        PTER-VEO3
+        Team Veo3
       </span>
     </a>
   );
