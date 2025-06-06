@@ -20,11 +20,11 @@ const InteractiveBackground: React.FC = () => {
   const mouse = useRef<{ x: number | null; y: number | null; radius: number }>({
     x: null,
     y: null,
-    radius: 220, // Increased radius for more interaction
+    radius: 220, 
   });
 
-  const [particleColor, setParticleColor] = useState('hsla(33, 100%, 50%, 1)'); // Max opacity
-  const [lineColor, setLineColor] = useState('hsla(33, 100%, 50%, 0.8)');  // High opacity
+  const [particleColor, setParticleColor] = useState('hsla(33, 100%, 50%, 1)');
+  const [lineColor, setLineColor] = useState('hsla(33, 100%, 50%, 0.8)');
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -49,14 +49,15 @@ const InteractiveBackground: React.FC = () => {
 
   const initParticles = useCallback((canvas: HTMLCanvasElement) => {
     particlesArray.current = [];
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 18000);
+    // Diminuí o divisor para AUMENTAR o número de partículas
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 12000); 
     for (let i = 0; i < numberOfParticles; i++) {
-      const radius = Math.random() * 1.5 + 0.5; // Original radius
+      const radius = Math.random() * 1.5 + 0.5;
       const x = Math.random() * (canvas.width - radius * 2) + radius;
       const y = Math.random() * (canvas.height - radius * 2) + radius;
       const vx = (Math.random() - 0.5) * 0.3;
       const vy = (Math.random() - 0.5) * 0.3;
-      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 }); // Opacity range: 0.7 to 1.0
+      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 });
     }
   }, []);
 
@@ -72,14 +73,14 @@ const InteractiveBackground: React.FC = () => {
         const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
 
         if (distanceMouse < mouse.current.radius && distanceMouse > 0) {
-          const forceDirectionX = dxMouse / distanceMouse; // Attract instead of repel
-          const forceDirectionY = dyMouse / distanceMouse; // Attract instead of repel
+          const forceDirectionX = dxMouse / distanceMouse; 
+          const forceDirectionY = dyMouse / distanceMouse; 
           
           const maxDistance = mouse.current.radius;
-          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.0; // Adjusted force for attraction
+          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.0; 
           
-          p.x -= forceDirectionX * forceMagnitude; // Move towards mouse
-          p.y -= forceDirectionY * forceMagnitude; // Move towards mouse
+          p.x -= forceDirectionX * forceMagnitude; 
+          p.y -= forceDirectionY * forceMagnitude; 
         }
       }
 
@@ -112,8 +113,8 @@ const InteractiveBackground: React.FC = () => {
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
           const lineOpacity = Math.max(0, 1.0 * (1 - distance / 100));
-          ctx.strokeStyle = lineColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${lineOpacity * 0.8})`); // Multiply by base line opacity
-          ctx.lineWidth = 1.0; // Increased line width
+          ctx.strokeStyle = lineColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${lineOpacity * 0.8})`);
+          ctx.lineWidth = 1.0; 
           ctx.stroke();
         }
       }
@@ -142,13 +143,12 @@ const InteractiveBackground: React.FC = () => {
     const resizeCanvas = () => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
-      // Ensure heroContentElement is available before accessing offsetHeight
       canvas.height = heroContentElement ? heroContentElement.offsetHeight + 100 : window.innerHeight;
-      if (canvas.height < 500) canvas.height = window.innerHeight;
+      if (canvas.height < 500) canvas.height = window.innerHeight; // Fallback height
       initParticles(canvas);
     };
     
-    resizeCanvas(); // Call initially once mounted and canvas ref is available
+    resizeCanvas(); 
     
     renderLoop();
     window.addEventListener('resize', resizeCanvas);
@@ -180,7 +180,7 @@ const InteractiveBackground: React.FC = () => {
   }, [hasMounted, initParticles, newAnimateParticles]);
 
   if (!hasMounted) {
-    return null; // Or a placeholder if you prefer
+    return null;
   }
 
   return (
@@ -192,3 +192,5 @@ const InteractiveBackground: React.FC = () => {
 };
 
 export default InteractiveBackground;
+
+    

@@ -7,7 +7,7 @@ import InteractiveBackground from '@/components/InteractiveBackground';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24 bg-background-end"> {/* Adicionado bg-background-end para contraste */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24 bg-background-end"> 
       <InteractiveBackground />
       <div id="hero-section-content" className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -68,7 +68,7 @@ export default function HeroSection() {
                 title="YouTube video player - Team VEO3"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen // Atributo booleano corrigido
+                allowFullScreen
               ></iframe>
             </div>
           </div>
@@ -77,3 +77,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+    
