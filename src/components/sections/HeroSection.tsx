@@ -54,7 +54,7 @@ export default function HeroSection() {
               </li>
               <li className="flex items-center">
                 <CheckCircle className="h-4 w-4 mr-2 text-accent" />
-                Faça pelo celular e computador.
+                Seu vídeo viral começa com um clique — no celular ou no computador.
               </li>
             </ul>
           </div>
