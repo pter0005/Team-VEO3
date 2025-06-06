@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -30,7 +31,7 @@ export default function PricingSection() {
     
     // Abre o link em uma nova aba.
     window.open(finalCheckoutUrl, '_blank', 'noopener,noreferrer');
-  }, [searchParams]); // searchParams é uma dependência para recriar a função se ele mudar.
+  }, [searchParams]);
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -67,7 +68,6 @@ export default function PricingSection() {
             </ul>
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
-            {/* O botão agora chama handlePurchaseClick, que faz o redirecionamento */}
             <Button
               onClick={handlePurchaseClick} 
               size="lg"
