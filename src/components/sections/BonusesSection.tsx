@@ -16,16 +16,6 @@ const bonuses: Bonus[] = [
   { icon: Bot, title: 'BOT PROMPT VIRAL', description: 'A IA mais poderosa do mercado especializada em criar vídeos personalizados.' },
   { icon: Zap, title: 'Domine Outras IAs', description: 'Expanda seu arsenal de ferramentas de IA em alta.' },
   { icon: ShieldCheck, title: 'Guia de Monetização Avançado', description: 'Estratégias comprovadas para lucrar alto.' },
-  {
-    icon: Image,
-    title: 'Pack de Imagens Horizontais #1',
-    description: 'Coleção de imagens horizontais otimizadas para viralização e marketing digital.'
-  },
-  {
-    icon: Layers,
-    title: 'Pack de Imagens Horizontais #2',
-    description: 'Templates visuais e mais imagens horizontais prontas para usar em seus conteúdos.'
-  },
   { icon: Gift, title: 'Suporte Prioritário', description: 'Nossa equipe pronta para te ajudar a decolar.' },
 ];
 
