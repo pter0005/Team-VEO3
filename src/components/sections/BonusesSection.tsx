@@ -12,7 +12,7 @@ interface Bonus {
 
 const bonuses: Bonus[] = [
   { icon: Gem, title: 'Acesso Vitalício', value: 'R$230,00', description: 'Aprenda no seu ritmo, para sempre.' },
-  { icon: Wand2, title: 'Studio Viral', description: 'O gerador de prompts mais poderoso do mercado.' },
+  { icon: Users, title: 'Comunidade VIP de Alunos', description: 'Networking e suporte exclusivo com outros membros.' },
   { icon: Bot, title: 'BOT PROMPT VIRAL', description: 'A IA mais poderosa do mercado especializada em criar vídeos personalizados.' },
   { icon: Zap, title: 'Domine Outras IAs', description: 'Expanda seu arsenal de ferramentas de IA em alta.' },
   { icon: ShieldCheck, title: 'Guia de Monetização Avançado', description: 'Estratégias comprovadas para lucrar alto.' },
