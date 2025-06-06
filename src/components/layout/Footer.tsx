@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-sora text-lg font-semibold">Contato</h3>
             <ul className="space-y-2 text-sm text-muted-foreground font-rubik">
-              <li>Email: pteracademy@gmail.com</li>
+              <li>Email: teamveo3top@gmail.com</li>
               <li>WhatsApp: +55 (99) 9999-999</li>
             </ul>
             <div className="flex space-x-4 mt-4">
