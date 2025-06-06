@@ -7,7 +7,7 @@ export default function ResultsSection() {
     <section id="resultados" className="py-16 md:py-24 bg-background scroll-mt-20">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-6">
-          Resultados que conquistei com 3 dias com o <span className="text-primary">Bot Prompt Viral</span>
+          Resultados que conquistei com o <span className="text-primary">Bot Prompt Viral</span>
         </h2>
         <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 text-center font-rubik">
           Descubra como usei prompts prontos e altamente otimizados para criar vídeos virais com inteligência artificial — atraindo milhares de visualizações, engajamento real e seguidores todos os dias. Tudo de forma simples, rápida e automática.
