@@ -3,7 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
-import { useSearchParams } from 'next/navigation'; // Corrigido para next/navigation
+import { useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -18,8 +19,7 @@ const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 export default function PricingSection() {
   const searchParams = useSearchParams();
 
-  const handlePurchaseClick = () => {
-    // Acessa os searchParams DENTRO da função de clique
+  const handlePurchaseClick = useCallback(() => {
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
 
@@ -28,7 +28,7 @@ export default function PricingSection() {
     }
     // Abre em uma nova aba
     window.open(finalCheckoutUrl, '_blank', 'noopener,noreferrer');
-  };
+  }, [searchParams]);
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
