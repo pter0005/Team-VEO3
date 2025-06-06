@@ -4,6 +4,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import BenefitsSection from '@/components/sections/BenefitsSection';
 import PromiseSection from '@/components/sections/PromiseSection';
 import CurriculumSection from '@/components/sections/CurriculumSection';
+import AccessSection from '@/components/sections/AccessSection'; // Nova importação
 import SocialProofSection from '@/components/sections/SocialProofSection';
 import BonusesSection from '@/components/sections/BonusesSection';
 import PricingSection from '@/components/sections/PricingSection';
@@ -18,6 +19,7 @@ export default function HomePage() {
         <BenefitsSection />
         <PromiseSection />
         <CurriculumSection />
+        <AccessSection /> {/* Nova seção adicionada */}
         <SocialProofSection />
         <BonusesSection />
         <PricingSection />
