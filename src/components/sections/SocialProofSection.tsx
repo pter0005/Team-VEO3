@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageSquare, Users, BarChart3 } from 'lucide-react';
@@ -6,26 +7,26 @@ const testimonials = [
   {
     id: 1,
     image: "https://placehold.co/400x300.png",
-    alt: "Direct Message Testimonial",
+    alt: "Depoimento em mensagem direta mostrando sucesso com PTER-VEO3",
     caption: "“Finalmente consegui viralizar! Obrigado PTER-VEO3!”",
     icon: MessageSquare,
-    hint: "chat bubble"
+    hint: "testimonial message"
   },
   {
     id: 2,
     image: "https://placehold.co/400x300.png",
-    alt: "Instagram Views Proof",
+    alt: "Print de tela mostrando aumento de visualizações no Instagram",
     caption: "+300k views no primeiro vídeo seguindo o método.",
     icon: BarChart3,
-    hint: "graph chart"
+    hint: "views graph"
   },
   {
     id: 3,
     image: "https://placehold.co/400x300.png",
-    alt: "Follower Increase Proof",
+    alt: "Gráfico mostrando aumento de seguidores após usar o PTER-VEO3",
     caption: "Meus seguidores não param de crescer!",
     icon: Users,
-    hint: "social profile"
+    hint: "followers increase"
   },
 ];
 
@@ -58,7 +59,6 @@ export default function SocialProofSection() {
             </Card>
           ))}
         </div>
-        {/* For a real carousel, you'd use a library or custom implementation here */}
         <p className="text-center mt-8 text-sm text-muted-foreground font-rubik">(Carrossel de depoimentos e resultados)</p>
       </div>
     </section>
