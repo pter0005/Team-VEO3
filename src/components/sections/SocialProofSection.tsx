@@ -6,11 +6,11 @@ import { MessageSquare, Users, BarChart3 } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    image: "https://placehold.co/400x300.png",
-    alt: "Depoimento em mensagem direta mostrando sucesso com Team Veo3",
-    caption: "“Finalmente consegui viralizar! Obrigado Team Veo3!”",
+    image: "https://i.imgur.com/1FcDkwo.png",
+    alt: "Depoimento em mensagem direta mostrando sucesso com Team VEO3",
+    caption: "“Finalmente consegui viralizar! Obrigado Team VEO3!”",
     icon: MessageSquare,
-    hint: "testimonial message"
+    hint: "social proof"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const testimonials = [
   {
     id: 3,
     image: "https://placehold.co/400x300.png",
-    alt: "Gráfico mostrando aumento de seguidores após usar o Team Veo3",
+    alt: "Gráfico mostrando aumento de seguidores após usar o Team VEO3",
     caption: "Meus seguidores não param de crescer!",
     icon: Users,
     hint: "followers increase"
@@ -64,3 +64,4 @@ export default function SocialProofSection() {
     </section>
   );
 }
+
