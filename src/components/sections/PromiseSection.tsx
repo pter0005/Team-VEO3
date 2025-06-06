@@ -48,9 +48,9 @@ const videoExamplesData: Omit<VideoExample, 'embedUrl'>[] = [
   { 
     id: 2, 
     title: "POV: Vc é uma gótica em aracajú 2", 
-    thumb: "https://placehold.co/600x400.png", 
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Placeholder video
-    hint:"movie scene" 
+    thumb: "https://img.youtube.com/vi/utBOsHZ7yAc/sddefault.jpg", 
+    videoUrl: "https://www.youtube.com/watch?v=utBOsHZ7yAc", 
+    hint:"gothic style" 
   },
   { 
     id: 3, 
@@ -85,21 +85,22 @@ export default function PromiseSection() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {videoExamples.map((video) => (
-            <Card key={video.id} className="rounded-xl overflow-hidden group bg-card border-border hover:shadow-primary-glow-soft hover:border-primary/50 transition-all duration-300 ease-in-out h-full flex flex-col hover:scale-105">
+            <Card 
+              key={video.id} 
+              className="rounded-xl overflow-hidden group bg-card border-border hover:shadow-primary-glow-soft hover:border-primary/50 transition-all duration-300 ease-in-out h-full flex flex-col hover:scale-105"
+            >
               <CardContent className="p-0 flex-grow flex flex-col">
-                <div className="relative w-full aspect-video rounded-t-xl overflow-hidden">
+                <div className="relative w-full aspect-video">
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src={video.embedUrl}
-                    title={video.title}
+                    title={video.title} // Title is still good for accessibility
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
-                <div className="p-3 mt-auto bg-card">
-                  <h3 className="font-sora font-semibold text-sm text-foreground group-hover:text-primary transition-colors">{video.title}</h3>
-                </div>
+                {/* The title bar below the video has been removed */}
               </CardContent>
             </Card>
           ))}
