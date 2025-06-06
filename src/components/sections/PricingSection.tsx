@@ -4,8 +4,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
-import { useSearchParams } from 'next/navigation';
-import React from 'react';
+import { useSearchParams } from 'next/navigation'; // Importação correta
+import React from 'react'; // React é necessário para JSX
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -18,11 +18,12 @@ const professionalFeatures = [
 const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 
 export default function PricingSection() {
-  // useSearchParams deve ser chamado no corpo do componente de cliente
+  // useSearchParams é chamado no corpo do componente de cliente.
+  // Ele retorna um objeto que pode ser usado para ler os parâmetros da URL.
   const searchParams = useSearchParams();
 
   const handlePurchaseClick = () => {
-    // Lê o parâmetro 'ref' da URL atual
+    // Lê o valor do parâmetro 'ref' da URL atual.
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
 
