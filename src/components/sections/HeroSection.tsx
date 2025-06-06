@@ -61,7 +61,7 @@ export default function HeroSection() {
 
           {/* Right Column - Video */}
           <div className="flex justify-center items-center">
-            <div className="relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary-glow-soft">
+            <div className="relative w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary-glow-soft">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/XofVssZlpIE"
