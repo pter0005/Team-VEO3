@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlayCircle } from 'lucide-react';
 
 const videoExamples = [
-  { id: 1, title: "POV: Vc é uma gótica em aracajú", thumb: "https://placehold.co/600x400.png", hint:"abstract tech" },
+  { id: 1, title: "POV: Vc é uma gótica em aracajú", thumb: "https://img.youtube.com/vi/kLJm-nZGFsc/sddefault.jpg", hint:"gothic style" },
   { id: 2, title: "POV: Vc é uma gótica em aracajú 2", thumb: "https://placehold.co/600x400.png", hint:"movie scene" },
   { id: 3, title: "POV: O que deveria ter acontecido em 1500n mudou nada nao cara n mudou nada nao cara", thumb: "https://placehold.co/600x400.png", hint:"finance chart" },
   { id: 4, title: "POV: Seu time perdeu", thumb: "https://img.youtube.com/vi/VTxWgMCixCs/sddefault.jpg", hint:"soccer loss" },
@@ -48,3 +48,4 @@ export default function PromiseSection() {
     </section>
   );
 }
+
