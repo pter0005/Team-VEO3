@@ -23,23 +23,20 @@ export default function CurriculumSection() {
         </h2>
         <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden group">
           <CardContent className="p-0">
-            {/* Em telas md e maiores, este div será um container flex */}
             <div className="md:flex md:items-stretch w-full">
-              {/* Container da Imagem: Ocupa 1/3 da largura em telas md+, altura responsiva */}
               <div className="md:w-1/3 md:flex-shrink-0 w-full relative aspect-video md:aspect-auto md:min-h-[450px] overflow-hidden">
-                {/* Div para efeito de hover e posicionamento absoluto da imagem */}
                 <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
                   <Image
+                    //  VOCÊ PODE EDITAR O LINK DA IMAGEM AQUI ABAIXO:
                     src="https://i.imgur.com/QGk5M3G.png"
                     alt="Nikola Tesla com uma lâmpada brilhante, simbolizando ideias e inovação com IA."
                     layout="fill"
                     objectFit="cover"
                     data-ai-hint="nikola tesla idea"
-                    className="rounded-none md:rounded-l-lg md:rounded-r-none" // Arredonda canto esquerdo em md+
+                    className="rounded-none md:rounded-l-lg md:rounded-r-none" 
                   />
                 </div>
               </div>
-              {/* Container do Texto: Ocupa 2/3 da largura em telas md+ */}
               <div className="md:w-2/3 md:flex-shrink-0 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                 <ul className="space-y-4">
                   {summarizedCurriculumItems.map((item, index) => (
