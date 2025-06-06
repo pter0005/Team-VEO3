@@ -3,7 +3,10 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 // NENHUM SCRIPT DE REDIRECIONAMENTO DE AFILIADO DEVE ESTAR AQUI.
-// A lógica de afiliado está APENAS no componente PricingSection e é acionada no clique do botão.
+// QUALQUER LÓGICA DE AFILIADO DEVE ESTAR APENAS NO COMPONENTE PricingSection
+// E SER ACIONADA SOMENTE NO CLIQUE DO BOTÃO DE COMPRA.
+// ESTE ARQUIVO É APENAS PARA A ESTRUTURA DA PÁGINA E METADADOS.
+// NÃO ADICIONE NENHUM window.location.href OU LÓGICA DE searchParams AQUI.
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://teamveo3.com'),
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/favicon.ico', // Define o caminho padrão para o favicon
+    icon: '/favicon.ico',
   },
 };
 
@@ -35,6 +38,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Sora:wght@400;500;600;700&family=Rubik:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        {/* NENHUM SCRIPT DE REDIRECIONAMENTO DEVE ESTAR AQUI NO BODY TAMBÉM */}
         {children}
         <Toaster />
       </body>
