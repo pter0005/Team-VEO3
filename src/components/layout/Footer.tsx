@@ -20,10 +20,8 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { Icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  { Icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
-  { Icon: TikTokIcon, href: 'https://tiktok.com', label: 'TikTok' },
-  { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+  { Icon: Instagram, href: 'https://www.instagram.com/ia.malucas/', label: 'Instagram' },
+  { Icon: TikTokIcon, href: 'https://www.tiktok.com/@experimentoscuriosos1?lang=pt', label: 'TikTok' },
 ];
 
 export default function Footer() {
