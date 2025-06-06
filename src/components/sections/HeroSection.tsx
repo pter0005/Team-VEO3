@@ -1,11 +1,9 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { PlayCircle } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="py-16 md:py-24"> 
+    <section className="py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 md:px-6 w-full text-center">
         <h1 className="font-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[56px] font-bold mb-6">
           Lucre todos os dias com vídeos virais <br className="hidden md:block" />
@@ -14,22 +12,17 @@ export default function HeroSection() {
             PTER-VEO3
           </span>
         </h1>
-        
-        <div className="relative max-w-3xl mx-auto my-8 md:my-12 aspect-video rounded-xl overflow-hidden shadow-2xl group cursor-pointer border border-primary/20">
-          <Image
-            src="https://placehold.co/1280x720.png"
-            alt="Demonstração do Curso PTER-VEO3"
-            layout="fill"
-            objectFit="cover"
-            data-ai-hint="video player"
-            className="transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <PlayCircle className="h-20 w-20 text-white/80" />
-          </div>
-           <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
-            <PlayCircle className="h-20 w-20 text-primary/70" />
-          </div>
+
+        {/* Vídeo Incorporado do YouTube */}
+        <div className="relative max-w-3xl mx-auto my-8 md:my-12 aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/20">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Substitua pelo ID do seu vídeo do YouTube
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <p className="font-dm-sans text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
