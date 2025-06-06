@@ -14,11 +14,11 @@ const testimonials = [
   },
   {
     id: 2,
-    image: "https://placehold.co/400x300.png",
-    alt: "Print de tela mostrando aumento de visualizações no Instagram",
+    image: "https://i.imgur.com/yVMmYXf.png",
+    alt: "Print de tela mostrando ganhos financeiros após usar o Team VEO3",
     caption: "+300k views no primeiro vídeo seguindo o método.",
     icon: BarChart3,
-    hint: "views graph"
+    hint: "earnings proof"
   },
   {
     id: 3,
