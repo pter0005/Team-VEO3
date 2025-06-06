@@ -26,7 +26,7 @@ export default function PricingSection() {
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
       <div className="container mx-auto max-w-3xl px-4 md:px-6 text-center">
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
-          Aproveite o <span className="text-primary">PTER-VEO3</span> enquanto ele é permitido
+          Aproveite a <span className="text-primary">oportunidade</span> enquanto ela está disponível
         </h2>
         <p className="text-muted-foreground md:text-lg mb-10 font-rubik">Uma oportunidade única para transformar sua presença digital e financeira.</p>
         
