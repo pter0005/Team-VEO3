@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const professionalFeatures = [
   { text: 'Curso Completo Team VEO3', icon: CheckCircle },
@@ -21,16 +21,20 @@ export default function PricingSection() {
   const [checkoutUrl, setCheckoutUrl] = useState(BASE_CHECKOUT_URL);
 
   useEffect(() => {
-    // Este código roda no cliente APÓS a página carregar.
-    // Ele define o link do botão.
+    // Este useEffect é executado no cliente após a montagem do componente
+    // e sempre que searchParams mudar.
+    // Ele define o link que será usado no href do botão.
     const refParam = searchParams.get('ref');
-    let finalCheckoutUrl = BASE_CHECKOUT_URL;
-
     if (refParam) {
-      finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${refParam}`;
+      setCheckoutUrl(`${BASE_CHECKOUT_URL}?afid=${refParam}`);
+    } else {
+      // Garante que se o ref for removido ou inválido, volte ao URL base
+      setCheckoutUrl(BASE_CHECKOUT_URL);
     }
-    setCheckoutUrl(finalCheckoutUrl);
-  }, [searchParams]); // Roda quando searchParams estiver disponível/mudar
+  }, [searchParams]);
+
+  // A função de clique não é mais necessária aqui se o href do link é dinâmico.
+  // O redirecionamento ocorrerá nativamente pelo clique no link <a>.
 
   return (
     <section id="precos" className="py-16 md:py-24 bg-background-end scroll-mt-20">
@@ -73,6 +77,7 @@ export default function PricingSection() {
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >
               {/* O link é definido pelo estado checkoutUrl. target="_blank" abre em nova aba. */}
+              {/* rel="noopener noreferrer" é importante por segurança ao usar target="_blank" */}
               <a href={checkoutUrl} target="_blank" rel="noopener noreferrer">
                 Liberar Acesso Agora
               </a>
