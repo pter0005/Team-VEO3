@@ -21,20 +21,22 @@ export default function CurriculumSection() {
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-12">
           O Que Você Vai Aprender e Ter Acesso <br className="sm:hidden" /> Dentro do Treinamento <span className="text-primary">PTER-VEO3</span>
         </h2>
-        <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden">
+        <Card className="bg-background-end shadow-xl border-primary/30 overflow-hidden group">
           <CardContent className="p-0 md:p-0">
-            <div className="md:flex md:items-center">
-              <div className="md:w-1/3 relative aspect-square md:aspect-auto md:h-[450px] h-64 w-full overflow-hidden">
-                <Image
-                  src="https://placehold.co/600x800.png"
-                  alt="Nikola Tesla com uma lâmpada brilhante, simbolizando ideias e inovação com IA."
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="nikola tesla idea"
-                  className="rounded-none md:rounded-l-lg md:rounded-r-none"
-                />
+            <div className="md:flex md:items-stretch"> {/* Alterado para items-stretch para a imagem preencher a altura se necessário */}
+              <div className="md:w-1/3 relative aspect-square md:aspect-auto md:min-h-[450px] h-64 w-full overflow-hidden">
+                <div className="absolute inset-0 transition-all duration-300 ease-in-out group-hover:brightness-125">
+                  <Image
+                    src="https://placehold.co/600x800.png"
+                    alt="Nikola Tesla com uma lâmpada brilhante, simbolizando ideias e inovação com IA."
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint="nikola tesla idea"
+                    className="rounded-none md:rounded-l-lg md:rounded-r-none"
+                  />
+                </div>
               </div>
-              <div className="md:w-2/3 p-6 md:p-8 lg:p-10">
+              <div className="md:w-2/3 p-6 md:p-8 lg:p-10 flex flex-col justify-center"> {/* Adicionado flex para centralizar verticalmente se necessário */}
                 <ul className="space-y-4">
                   {summarizedCurriculumItems.map((item, index) => (
                     <li key={index} className="flex items-start space-x-3">
