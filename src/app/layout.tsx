@@ -4,8 +4,17 @@ import { Toaster } from "@/components/ui/toaster";
 import Script from 'next/script';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://teamveo3.com'),
   title: 'Veo Viral',
   description: 'Lucre todos os dias com vídeos virais usando a nova IA do Google Team VEO3',
+  openGraph: {
+    title: 'Veo Viral',
+    description: 'Lucre todos os dias com vídeos virais usando a nova IA do Google Team VEO3',
+    url: 'https://teamveo3.com',
+    siteName: 'Team VEO3',
+    locale: 'pt_BR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -29,7 +38,7 @@ export default function RootLayout({
 
               if (ref) {
                 // Garante que o script não execute em iframes (ex: previews) e só na janela principal
-                if (window.top === window.self) { 
+                if (window.top === window.self) {
                   window.location.href = \`https://pay.kiwify.com.br/fDJSYQh?afid=\${ref}\`;
                 }
               }
