@@ -20,7 +20,7 @@ export default function PricingSection() {
         <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
           Aproveite a <span className="text-primary">oportunidade</span> enquanto ela está disponível
         </h2>
-        <p className="text-muted-foreground md:text-lg mb-10 font-rubik">Uma oportunidade única para transformar sua presença digital e financeira.</p>
+        <p className="text-muted-foreground text-base sm:text-lg mb-10 font-rubik">Uma oportunidade única para transformar sua presença digital e financeira.</p>
         
         <Card className="bg-foreground/5 backdrop-blur-lg border border-foreground/10 shadow-2xl transition-all duration-300 ease-in-out hover:shadow-primary-glow-soft hover:border-primary/50">
           <CardHeader>
@@ -32,7 +32,7 @@ export default function PricingSection() {
           <CardContent className="space-y-6">
             <div className="text-center my-6">
               <p className="text-2xl text-muted-foreground line-through">De R$ 76,99</p>
-              <p className="font-headline text-5xl md:text-[42px] font-bold text-primary mt-1">
+              <p className="font-headline text-4xl sm:text-5xl md:text-[42px] font-bold text-primary mt-1">
                 Por R$ 23,99
               </p>
               <p className="text-muted-foreground mt-2 font-rubik">(Pagamento Único - Sem Mensalidades)</p>

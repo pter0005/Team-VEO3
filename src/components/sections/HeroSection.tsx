@@ -23,7 +23,7 @@ export default function HeroSection() {
                 Google VEO3
               </span>
             </h1>
-            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
+            <p className="font-body text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
               Descubra como a inteligência artificial VEO3 pode transformar sua produção de conteúdo e monetização, mesmo sem aparecer ou ter experiência.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">

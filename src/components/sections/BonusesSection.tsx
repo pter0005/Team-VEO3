@@ -27,7 +27,7 @@ export default function BonusesSection() {
             <h2 className="font-headline text-3xl md:text-4xl font-bold">
             Ganhe <span className="text-primary">R$ 630,00</span> em Bônus Insanos
             </h2>
-            <p className="text-muted-foreground mt-2 md:text-lg font-rubik">Ao se inscrever hoje, você leva tudo isso DE GRAÇA!</p>
+            <p className="text-muted-foreground mt-2 text-base sm:text-lg font-rubik">Ao se inscrever hoje, você leva tudo isso DE GRAÇA!</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {bonuses.map((bonus, index) => (
@@ -54,4 +54,3 @@ export default function BonusesSection() {
     </section>
   );
 }
-

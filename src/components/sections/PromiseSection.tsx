@@ -96,7 +96,7 @@ export default function PromiseSection() {
         <h2 className="font-sora text-3xl md:text-4xl font-bold mb-6">
           Você <span className="text-primary">Não Precisa Ser Expert</span> Para Criar Vídeos Virais
         </h2>
-        <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 font-rubik">
+        <p className="max-w-3xl mx-auto text-muted-foreground text-base sm:text-lg mb-12 font-rubik">
           Os vídeos abaixo foram criados por mim e, em apenas 2 dias, ultrapassaram 15 milhões de visualizações no TikTok e no Instagram.
           Neste curso, você vai aprender exatamente como eu consegui esse resultado e como qualquer pessoa pode lucrar com a VEO3, mesmo sem saber nada de edição ou computadores.
         </p>

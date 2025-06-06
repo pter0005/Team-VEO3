@@ -9,7 +9,7 @@ export default function ResultsSection() {
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-6">
           Resultados que conquistei com o <span className="text-primary">Bot Prompt Viral</span>
         </h2>
-        <p className="max-w-3xl mx-auto text-muted-foreground md:text-lg mb-12 text-center font-rubik">
+        <p className="max-w-3xl mx-auto text-muted-foreground text-base sm:text-lg mb-12 text-center font-rubik">
           Descubra como usei prompts prontos e altamente otimizados para criar vídeos virais com inteligência artificial — atraindo milhares de visualizações, engajamento real e seguidores todos os dias. Tudo de forma simples, rápida e automática.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
