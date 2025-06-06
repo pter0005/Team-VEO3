@@ -50,8 +50,7 @@ export default function SocialProofSection() {
                         objectFit="cover"
                         data-ai-hint={testimonial.hint}
                         className={cn(
-                          "transition-transform duration-300 group-hover:scale-105",
-                          testimonial.id === 2 && "object-right" 
+                          "transition-transform duration-300 group-hover:scale-105"
                         )}
                     />
                  </div>
