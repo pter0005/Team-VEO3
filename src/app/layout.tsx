@@ -4,28 +4,10 @@ import { Toaster } from "@/components/ui/toaster";
 
 // NENHUM SCRIPT DE REDIRECIONAMENTO DE AFILIADO DEVE ESTAR AQUI.
 // QUALQUER LÓGICA DE AFILIADO DEVE ESTAR APENAS NO COMPONENTE PricingSection
-// E SER ACIONADA SOMENTE NO CLIQUE DO BOTÃO DE COMPRA OU NA DEFINIÇÃO DO HREF DO BOTÃO.
+// E SER ACIONADA SOMENTE NO CLIQUE DO BOTÃO DE COMPRA.
 // ESTE ARQUIVO É APENAS PARA A ESTRUTURA DA PÁGINA E METADADOS.
 // NÃO ADICIONE NENHUM window.location.href OU LÓGICA DE searchParams AQUI QUE RODE NO CARREGAMENTO DA PÁGINA.
-// O SCRIPT ABAIXO É APENAS PARA FONTES E NÃO DEVE CONTER LÓGICA DE REDIRECIONAMENTO.
-/*
-<script>
-  // EXEMPLO DE SCRIPT QUE NÃO FAZ REDIRECIONAMENTO E É SEGURO (APENAS PARA ILUSTRAÇÃO)
-  // console.log("Layout carregado");
-</script>
-*/
-// O TRECHO ABAIXO QUE CAUSA REDIRECIONAMENTO NÃO DEVE ESTAR AQUI EM NENHUMA HIPÓTESE:
-/*
-<script>
-  const url = new URL(window.location.href);
-  const ref = url.searchParams.get("ref");
-
-  if (ref) { // ESTE IF CAUSA O REDIRECIONAMENTO IMEDIATO
-    window.location.href = `https://pay.kiwify.com.br/fDJSYQh?afid=${ref}`;
-  }
-</script>
-*/
-
+// QUALQUER SCRIPT <script>...</script> AQUI NÃO DEVE FAZER REDIRECIONAMENTO.
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://teamveo3.com'),
