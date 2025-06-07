@@ -18,32 +18,26 @@ const professionalFeatures = [
 const BASE_CHECKOUT_URL = 'https://pay.kiwify.com.br/fDJSYQh';
 
 export default function PricingSection() {
-  const searchParams = useSearchParams(); // Hook para ler parâmetros da URL
+  const searchParams = useSearchParams(); 
 
-  // Função para lidar com o clique no botão de compra
   const handlePurchaseClick = useCallback(() => {
-    // Lê o parâmetro 'ref' da URL ATUAL no momento do clique.
     const refParam = searchParams.get('ref');
     let finalCheckoutUrl = BASE_CHECKOUT_URL;
 
     if (refParam) {
-      // Adiciona o 'afid' se 'ref' existir
-      finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${refParam}`;
+      finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${encodeURIComponent(refParam)}`;
     }
     
     // Abre o link em uma nova aba.
-    // window.open é seguro para ser usado aqui pois é uma ação direta do usuário.
     window.open(finalCheckoutUrl, '_blank', 'noopener,noreferrer');
-  }, [searchParams]); // Dependência: searchParams
+  }, [searchParams]);
 
-  // Este useEffect é apenas para logar no console e ajudar no debug.
-  // Ele NÃO causa redirecionamentos.
   useEffect(() => {
     const refParam = searchParams.get('ref');
     if (refParam) {
-      console.log('Parâmetro ref encontrado na URL:', refParam);
+      console.log('Parâmetro ref encontrado na URL ao carregar PricingSection:', refParam);
     } else {
-      console.log('Nenhum parâmetro ref encontrado na URL.');
+      console.log('Nenhum parâmetro ref encontrado na URL ao carregar PricingSection.');
     }
   }, [searchParams]);
 
@@ -82,7 +76,6 @@ export default function PricingSection() {
             </ul>
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
-            {/* O botão agora chama handlePurchaseClick */}
             <Button
               onClick={handlePurchaseClick} 
               size="lg"
