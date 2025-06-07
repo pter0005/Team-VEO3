@@ -20,11 +20,11 @@ const InteractiveBackground: React.FC = () => {
   const mouse = useRef<{ x: number | null; y: number | null; radius: number }>({
     x: null,
     y: null,
-    radius: 220, 
+    radius: 220, // Increased radius for more interaction
   });
 
-  const [particleColor, setParticleColor] = useState('hsla(33, 100%, 50%, 1)');
-  const [lineColor, setLineColor] = useState('hsla(33, 100%, 50%, 0.8)');
+  const [particleColor, setParticleColor] = useState('hsla(33, 100%, 50%, 1)'); // Max opacity
+  const [lineColor, setLineColor] = useState('hsla(33, 100%, 50%, 0.8)');  // High opacity
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -36,11 +36,14 @@ const InteractiveBackground: React.FC = () => {
 
     if (typeof window !== 'undefined') {
       const computedStyle = getComputedStyle(document.documentElement);
-      const primaryHue = computedStyle.getPropertyValue('--primary').split(' ')[0];
-      const primarySaturation = computedStyle.getPropertyValue('--primary').split(' ')[1];
-      const primaryLightness = computedStyle.getPropertyValue('--primary').split(' ')[2];
-
-      if (primaryHue && primarySaturation && primaryLightness) {
+      const primaryVar = computedStyle.getPropertyValue('--primary').trim();
+      const primaryParts = primaryVar.split(' ');
+      
+      if (primaryParts.length === 3) {
+        const primaryHue = primaryParts[0];
+        const primarySaturation = primaryParts[1];
+        const primaryLightness = primaryParts[2];
+        
         setParticleColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 1)`);
         setLineColor(`hsla(${primaryHue}, ${primarySaturation}, ${primaryLightness}, 0.8)`);
       }
@@ -49,15 +52,14 @@ const InteractiveBackground: React.FC = () => {
 
   const initParticles = useCallback((canvas: HTMLCanvasElement) => {
     particlesArray.current = [];
-    // Diminuí o divisor para AUMENTAR o número de partículas
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 12000); 
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 18000);
     for (let i = 0; i < numberOfParticles; i++) {
-      const radius = Math.random() * 1.5 + 0.5;
+      const radius = Math.random() * 1.5 + 0.5; // Original radius
       const x = Math.random() * (canvas.width - radius * 2) + radius;
       const y = Math.random() * (canvas.height - radius * 2) + radius;
       const vx = (Math.random() - 0.5) * 0.3;
       const vy = (Math.random() - 0.5) * 0.3;
-      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 });
+      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 }); // Opacity range: 0.7 to 1.0
     }
   }, []);
 
@@ -100,7 +102,8 @@ const InteractiveBackground: React.FC = () => {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
-      ctx.fillStyle = particleColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${p.opacity})`);
+      const baseParticleColor = particleColor.substring(0, particleColor.lastIndexOf(',')) 
+      ctx.fillStyle = `${baseParticleColor}, ${p.opacity})`;
       ctx.fill();
 
       for (let j = i + 1; j < particlesArray.current.length; j++) {
@@ -112,8 +115,10 @@ const InteractiveBackground: React.FC = () => {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          const lineOpacity = Math.max(0, 1.0 * (1 - distance / 100));
-          ctx.strokeStyle = lineColor.replace(/hsla?\(([^,]+,\s*[^,]+,\s*[^,]+,)\s*[\d\.]+\)/, `hsla($1 ${lineOpacity * 0.8})`);
+          const lineOpacityValue = Math.max(0, 1.0 * (1 - distance / 100));
+          const baseLineColor = lineColor.substring(0, lineColor.lastIndexOf(',')) 
+          const finalLineOpacity = parseFloat(lineColor.substring(lineColor.lastIndexOf(',') + 1, lineColor.lastIndexOf(')')));
+          ctx.strokeStyle = `${baseLineColor}, ${lineOpacityValue * finalLineOpacity })`;
           ctx.lineWidth = 1.0; 
           ctx.stroke();
         }
@@ -133,24 +138,32 @@ const InteractiveBackground: React.FC = () => {
     let isComponentMounted = true;
 
     const renderLoop = () => {
-      if (!isComponentMounted) return;
+      if (!isComponentMounted || !particlesArray.current.length) return;
       newAnimateParticles(ctx, canvas);
       animationFrameId = requestAnimationFrame(renderLoop);
     };
 
-    const heroContentElement = document.getElementById('hero-section-content');
+    const heroContentElement = document.getElementById('hero-section-content'); 
 
     const resizeCanvas = () => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = heroContentElement ? heroContentElement.offsetHeight + 100 : window.innerHeight;
-      if (canvas.height < 500) canvas.height = window.innerHeight; // Fallback height
+      if (canvas.height < 500) canvas.height = window.innerHeight; 
       initParticles(canvas);
     };
     
     resizeCanvas(); 
     
-    renderLoop();
+    if (particlesArray.current.length > 0) {
+        renderLoop();
+    } else { 
+        initParticles(canvas);
+        if (particlesArray.current.length > 0) {
+            renderLoop();
+        }
+    }
+    
     window.addEventListener('resize', resizeCanvas);
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -165,32 +178,28 @@ const InteractiveBackground: React.FC = () => {
       mouse.current.y = null;
     };
 
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave); 
 
     return () => {
       isComponentMounted = false;
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resizeCanvas);
-      if (canvas) {
-        canvas.removeEventListener('mousemove', handleMouseMove);
-        canvas.removeEventListener('mouseleave', handleMouseLeave);
-      }
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [hasMounted, initParticles, newAnimateParticles]);
 
   if (!hasMounted) {
-    return null;
+    return null; 
   }
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 -z-10"
+      className="absolute inset-0 pointer-events-auto" 
     />
   );
 };
 
 export default InteractiveBackground;
-
-    
