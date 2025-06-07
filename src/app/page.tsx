@@ -1,4 +1,5 @@
 
+import { Suspense } from 'react';
 import Header from '@/components/layout/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import PromiseSection from '@/components/sections/PromiseSection';
@@ -23,7 +24,9 @@ export default function HomePage() {
         <CurriculumSection />
         <SocialProofSection />
         <BonusesSection />
-        <PricingSection />
+        <Suspense fallback={<div className="text-center py-12">Carregando informações de preço...</div>}>
+          <PricingSection />
+        </Suspense>
         <FaqSection />
       </main>
       <Footer />
