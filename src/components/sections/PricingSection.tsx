@@ -28,11 +28,12 @@ export default function PricingSection() {
       finalCheckoutUrl = `${BASE_CHECKOUT_URL}?afid=${encodeURIComponent(refParam)}`;
     }
     
-    // Abre o link em uma nova aba.
+    // Abre o link em uma nova aba, SOMENTE QUANDO ESTA FUNÇÃO É CHAMADA (NO CLIQUE)
     window.open(finalCheckoutUrl, '_blank', 'noopener,noreferrer');
   }, [searchParams]);
 
   useEffect(() => {
+    // Este useEffect APENAS loga no console, não abre links.
     const refParam = searchParams.get('ref');
     if (refParam) {
       console.log('Parâmetro ref encontrado na URL ao carregar PricingSection:', refParam);
@@ -77,7 +78,7 @@ export default function PricingSection() {
           </CardContent>
           <CardFooter className="flex-col items-center gap-4 pt-8">
             <Button
-              onClick={handlePurchaseClick} 
+              onClick={handlePurchaseClick} // A função handlePurchaseClick é chamada AQUI
               size="lg"
               className="w-full max-w-xs bg-gradient-orange-red text-primary-foreground font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
             >

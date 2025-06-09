@@ -52,14 +52,15 @@ const InteractiveBackground: React.FC = () => {
 
   const initParticles = useCallback((canvas: HTMLCanvasElement) => {
     particlesArray.current = [];
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 18000);
+    // Aumentado o divisor para reduzir o número de partículas (de 12000 para 25000)
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 25000); 
     for (let i = 0; i < numberOfParticles; i++) {
-      const radius = Math.random() * 1.5 + 0.5; // Original radius
+      const radius = Math.random() * 1.5 + 0.5; 
       const x = Math.random() * (canvas.width - radius * 2) + radius;
       const y = Math.random() * (canvas.height - radius * 2) + radius;
-      const vx = (Math.random() - 0.5) * 0.3;
-      const vy = (Math.random() - 0.5) * 0.3;
-      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 }); // Opacity range: 0.7 to 1.0
+      const vx = (Math.random() - 0.5) * 0.25; // Velocidade ligeiramente reduzida
+      const vy = (Math.random() - 0.5) * 0.25; // Velocidade ligeiramente reduzida
+      particlesArray.current.push({ x, y, radius, vx, vy, originalX: x, originalY: y, opacity: Math.random() * 0.3 + 0.7 }); 
     }
   }, []);
 
@@ -79,7 +80,8 @@ const InteractiveBackground: React.FC = () => {
           const forceDirectionY = dyMouse / distanceMouse; 
           
           const maxDistance = mouse.current.radius;
-          const forceMagnitude = (1 - distanceMouse / maxDistance) * 3.0; 
+          // Reduzida a força de repulsão para movimentos mais suaves
+          const forceMagnitude = (1 - distanceMouse / maxDistance) * 1.5; 
           
           p.x -= forceDirectionX * forceMagnitude; 
           p.y -= forceDirectionY * forceMagnitude; 
@@ -111,15 +113,15 @@ const InteractiveBackground: React.FC = () => {
         const dx = p.x - p2.x;
         const dy = p.y - p2.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 100) {
+        if (distance < 100) { // Distância para desenhar linhas de conexão
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          const lineOpacityValue = Math.max(0, 1.0 * (1 - distance / 100));
+          const lineOpacityValue = Math.max(0, 0.8 * (1 - distance / 100)); // Opacidade da linha ligeiramente aumentada
           const baseLineColor = lineColor.substring(0, lineColor.lastIndexOf(',')) 
           const finalLineOpacity = parseFloat(lineColor.substring(lineColor.lastIndexOf(',') + 1, lineColor.lastIndexOf(')')));
           ctx.strokeStyle = `${baseLineColor}, ${lineOpacityValue * finalLineOpacity })`;
-          ctx.lineWidth = 1.0; 
+          ctx.lineWidth = 0.5; // Espessura da linha reduzida
           ctx.stroke();
         }
       }
@@ -148,8 +150,9 @@ const InteractiveBackground: React.FC = () => {
     const resizeCanvas = () => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
-      canvas.height = heroContentElement ? heroContentElement.offsetHeight + 100 : window.innerHeight;
-      if (canvas.height < 500) canvas.height = window.innerHeight; 
+      // Adiciona uma altura mínima para o canvas, e garante que cubra o conteúdo da hero section
+      const contentHeight = heroContentElement ? heroContentElement.offsetHeight + 100 : window.innerHeight;
+      canvas.height = Math.max(contentHeight, 500); 
       initParticles(canvas);
     };
     

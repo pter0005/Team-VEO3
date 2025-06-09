@@ -7,7 +7,7 @@ import InteractiveBackground from '@/components/InteractiveBackground';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24 bg-background-end"> 
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24 bg-true-black"> 
       <InteractiveBackground />
       <div id="hero-section-content" className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -77,5 +77,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-    
